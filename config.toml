@@ -63,7 +63,7 @@ theme = "LoveIt"
     Email = "home@markallison.co.uk"
     Twitter = "dataguzzle"
     RSS = true # LoveIt NEW | 0.2.0
-[params.page]
+  [params.page]
     # LoveIt NEW | 0.2.0 whether to hide a page from home page
     hiddenFromHomePage = false
     # LoveIt NEW | 0.2.0 whether to hide a page from search results
@@ -93,14 +93,14 @@ theme = "LoveIt"
         Twitter = true
         LinkedIn = true
         Whatsapp = true
- [params.page.comment]
+  [params.page.comment]
       enable = true
       # Disqus comment config
       [params.page.comment.disqus]
         # LoveIt NEW | 0.1.1
         enable = true
         # Disqus shortname to use Disqus in posts
-        shortname = "disqus_c0suXMkkIr"        
+        shortname = "markallison"        
 [menu]
   [[menu.main]]
     identifier = "posts"
