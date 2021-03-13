@@ -98,7 +98,17 @@ theme = "LoveIt"
 
   [params.page.share]
         enable = true
-        Twitter = true      
+        Twitter = true
+        LinkedIn = true
+        Whatsapp = true
+ [params.page.comment]
+      enable = true
+      # Disqus comment config
+      [params.page.comment.disqus]
+        # LoveIt NEW | 0.1.1
+        enable = true
+        # Disqus shortname to use Disqus in posts
+        shortname = "disqus_c0suXMkkIr"        
 [menu]
   [[menu.main]]
     identifier = "posts"
@@ -135,3 +145,7 @@ theme = "LoveIt"
     url = "/about/"
     title = ""
     weight = 4
+[author]
+  name = "Mark Allison"
+  email = "home@markallison.co.uk"
+  link = "www.markallison.co.uk"
