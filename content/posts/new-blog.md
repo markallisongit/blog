@@ -10,12 +10,12 @@ author: "Mark"
 
 ![Hugo](hugo-logo-wide.svg)
 
-I've moved away from Wordpress as it was getting bloated, complicated to manage and expensive to host. I wanted something that was 
+I've moved away from Wordpress as it was getting bloated, complicated to manage and expensive to host. I wanted something that was
 
 * fast
 * easy to use
 * cheap to host
-* source controlled 
+* source controlled
 
 I can now write blog posts in [markdown](https://www.markdownguide.org/) in [vscode](https://code.visualstudio.com/) and then push my changes to GitHub which lets me have a history, I can edit from anywhere by pulling and pushing from any machine, even my phone.
 
