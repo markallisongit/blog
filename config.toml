@@ -140,3 +140,8 @@ theme = "LoveIt"
 [author]
   name = "Mark Allison"
   email = "home@markallison.co.uk"
+[params.analytics]
+  enable = true
+  # Google Analytics
+  [params.analytics.google]
+    id = "G-PLWCT0MJK3"
