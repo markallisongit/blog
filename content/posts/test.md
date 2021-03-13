@@ -7,6 +7,8 @@ author: "Mark"
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus, purus eu semper faucibus, orci mi dignissim nisi, at bibendum est massa ac justo. Donec id dictum nibh, ut commodo mi. Donec condimentum cursus nunc, a faucibus nunc consequat ullamcorper. Donec sed tempor orci, ut auctor ipsum. Maecenas sed augue nec neque cursus ultrices. Donec blandit augue et dolor eleifend semper. Duis faucibus orci sed elit sollicitudin dictum. In tincidunt libero in sapien laoreet rutrum. Cras vel nisi felis. Phasellus commodo in metus quis tempus. Praesent porta justo nec diam interdum, ut maximus dolor commodo. In ullamcorper, augue ut blandit aliquam, nisl lectus vehicula ipsum, vel feugiat massa tortor eget metus. Phasellus congue bibendum urna, eget facilisis est fermentum id. Sed volutpat tempor malesuada.
 
+{{< gist markallisongit 8087e644938a696cfdf21a3b55918a74 >}}
+
 ```PowerShell
 [cmdletbinding()]
 param (

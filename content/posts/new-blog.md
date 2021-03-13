@@ -17,7 +17,7 @@ I've moved away from Wordpress as it was getting bloated, complicated to manage 
 * cheap to host
 * source controlled 
 
-I can now write blog posts in [markdown](https://www.markdownguide.org/) in [vscode](https://code.visualstudio.com/) and then push my changes to GitHub and I have a history and GitHub will build the static pages for me.
+I can now write blog posts in [markdown](https://www.markdownguide.org/) in [vscode](https://code.visualstudio.com/) and then push my changes to GitHub which lets me have a history, I can edit from anywhere by pulling and pushing from any machine, even my phone.
 
 I'm using the awesome [Hugo](https://gohugo.io/) static site generator, which generates the site from some template html and content contained in markdown files. I push this to my [GitHub repo](https://github.com/markallisongit/blog) and the website gets rebuilt on the fly using [netlify's](https://www.netlify.com/) CI/CD pipeline.
 
