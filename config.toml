@@ -1,16 +1,11 @@
 baseURL = "https://markallison.co.uk/"
-# [en, zh-cn, fr, ...] determines default content language
 defaultContentLanguage = "en"
-# language code
 languageCode = "en"
 title = "Mark Allison"
 enableEmoji = "true"
-
-# Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
 
 [params]
-  # LoveIt theme version
   version = "0.2.X"
   defaultTheme = "dark"
   gitRepo = "https://github.com/markallisongit/blog"
@@ -21,19 +16,16 @@ theme = "LoveIt"
     desktopMode = "fixed"
     # mobile header mode ("fixed", "normal", "auto")
     mobileMode = "auto"
-    # LoveIt NEW | 0.2.0 Header title config
 
   # Footer config
   [params.footer]
     enable = true
-    # LoveIt NEW | 0.2.0 Custom content (HTML format is supported)
-    custom = ''
     # LoveIt NEW | 0.2.0 whether to show Hugo and theme info
     hugo = true
     # LoveIt NEW | 0.2.0 whether to show copyright info
     copyright = true
     # LoveIt NEW | 0.2.0 whether to show the author
-    author = false
+    author = true
     # Site creation time
     since = 2021
  
@@ -119,7 +111,7 @@ theme = "LoveIt"
     name = "Posts"
     url = "/posts/"
     # title will be shown when you hover on this menu link
-    title = ""
+    title = "Show all posts"
     weight = 1
   [[menu.main]]
     identifier = "tags"
@@ -148,4 +140,3 @@ theme = "LoveIt"
 [author]
   name = "Mark Allison"
   email = "home@markallison.co.uk"
-  link = "www.markallison.co.uk"
