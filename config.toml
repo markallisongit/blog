@@ -9,7 +9,21 @@ theme = "LoveIt"
   version = "0.2.X"
   defaultTheme = "dark"
   gitRepo = "https://github.com/markallisongit/blog"
-  
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    style = "monokai"
+    tabWidth = 4
+
 # Header config
   [params.header]
     # desktop header mode ("fixed", "normal", "auto")
