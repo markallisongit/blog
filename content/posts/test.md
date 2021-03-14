@@ -3,6 +3,8 @@ title: "Test"
 date: 2021-03-13T07:52:35Z
 draft: true
 author: "Mark"
+featuredImage: "scruffy.jpg"
+featuredImagePreview: "scruffy.jpg"
 ---
 
 
