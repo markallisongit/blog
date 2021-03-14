@@ -5,7 +5,7 @@ lastmod: 2021-03-12T18:01:23
 categories: ["blog"]
 tags: ["blog","hugo"]
 author: "Mark"
-featuredImage: "/images/hugo-logo-wide.svg"
+featuredImage: "hugo-logo-wide.svg"
 ---
 
 ## Built with Hugo

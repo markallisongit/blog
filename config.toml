@@ -8,7 +8,7 @@ theme = "LoveIt"
 
 [params]
   version = "0.2.X"
-  defaultTheme = "dark"
+  defaultTheme = "auto"
   gitRepo = ""
   dateFormat = "Mon, 2 January 2006"
 
