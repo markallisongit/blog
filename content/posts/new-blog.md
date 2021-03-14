@@ -1,14 +1,14 @@
 ---
 title:  "New Blog"
 date: 2021-03-07T17:30:59
+lastmod: 2021-03-12T18:01:23
 categories: ["blog"]
 tags: ["blog","hugo"]
 author: "Mark"
+featuredImage: "hugo-logo-wide.svg"
 ---
 
 ## Built with Hugo
-
-![Hugo](hugo-logo-wide.svg)
 
 I've moved away from Wordpress as it was getting bloated, complicated to manage and expensive to host. I wanted something that was
 

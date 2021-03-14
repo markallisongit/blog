@@ -3,26 +3,14 @@ defaultContentLanguage = "en"
 languageCode = "en"
 title = "Mark Allison"
 enableEmoji = "true"
+enableRobotsTXT = true
 theme = "LoveIt"
 
 [params]
   version = "0.2.X"
   defaultTheme = "dark"
   gitRepo = "https://github.com/markallisongit/blog"
-
-[markup]
-  [markup.highlight]
-    anchorLineNos = false
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineAnchors = ""
-    lineNoStart = 1
-    lineNos = true
-    lineNumbersInTable = true
-    noClasses = false
-    style = "monokai"
-    tabWidth = 4
+  dateFormat = "Mon, 2 January 2006"
 
 # Header config
   [params.header]
@@ -30,19 +18,32 @@ theme = "LoveIt"
     desktopMode = "fixed"
     # mobile header mode ("fixed", "normal", "auto")
     mobileMode = "auto"
+    
+    [params.header.title]
+      name = "Mark Allison"
+      pre = ""
+      post = ""
+      typeit = false
 
   # Footer config
   [params.footer]
     enable = false
-    # LoveIt NEW | 0.2.0 whether to show Hugo and theme info
     hugo = true
-    # LoveIt NEW | 0.2.0 whether to show copyright info
     copyright = true
-    # LoveIt NEW | 0.2.0 whether to show the author
     author = true
-    # Site creation time
     since = 2021
- 
+
+  [params.section]
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "2-Jan"
+    rss = 10
+
+  [params.list]
+    paginate = 20
+    dateFormat = "2-Jan"
+    rss = 10    
+
   # Home page config
   [params.home]
     # LoveIt NEW | 0.2.0 amount of RSS pages
@@ -95,12 +96,7 @@ theme = "LoveIt"
     # whether to show link to Raw Markdown content of the content
     linkToMarkdown = true
     # LoveIt NEW | 0.2.4 whether to show the full text content in RSS
-    rssFullText = false
-    [params.page.code]
-      # whether to show the copy button of the code block
-      copy = true
-      # the maximum number of lines of displayed code by default
-      maxShownLines = 10    
+    rssFullText = false   
 
   [params.page.share]
         enable = true
@@ -159,3 +155,17 @@ theme = "LoveIt"
   # Google Analytics
   [params.analytics.google]
     id = "G-PLWCT0MJK3"
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    style = "monokai"
+    tabWidth = 4
