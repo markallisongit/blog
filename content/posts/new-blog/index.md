@@ -5,10 +5,14 @@ lastmod: 2021-03-12T18:01:23
 categories: ["blog"]
 tags: ["blog","hugo"]
 author: "Mark"
-featuredImage: "hugo-logo-wide.svg"
+featuredImagePreview: "featured-image-preview.jpg"
 ---
 
 ## Built with Hugo
+
+{{< style "img { height: 100px; }" >}}
+![Hugo Logo](featured-image.svg)
+{{< /style >}}
 
 I've moved away from Wordpress as it was getting bloated, complicated to manage and expensive to host. I wanted something that was
 
