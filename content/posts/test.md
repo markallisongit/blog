@@ -4,7 +4,6 @@ date: 2021-03-13T07:52:35Z
 draft: true
 author: "Mark"
 featuredImage: "scruffy.jpg"
-featuredImagePreview: "scruffy.jpg"
 ---
 
 
@@ -22,10 +21,17 @@ JFDI
 *-- Nigel*
 {{< /admonition >}}
 
+## Github gist
 
 {{< gist markallisongit 8087e644938a696cfdf21a3b55918a74 >}}
 
-```PowerShell
+## GitHub gist 2
+
+{{< gist markallisongit bc84666bfd744a94d3b314464868fd23 >}}
+
+## markdown highlighter
+
+``` PowerShell
 [cmdletbinding()]
 param (
     $SubscriptionName,
@@ -52,6 +58,7 @@ foreach($blob in $blobs) {
     }
 }
 ```
+
 
 Aliquam nec orci in quam malesuada consequat. Nunc a lectus id odio commodo porta. Pellentesque quis purus nunc. Donec id metus eget mi tincidunt molestie. Donec ac dignissim velit. Praesent id urna orci. Maecenas lobortis augue id dui sagittis, in pharetra sapien porttitor. In eu risus ac dolor volutpat fermentum ut ac leo. Fusce hendrerit eros vestibulum urna volutpat rutrum eget sit amet ex. Integer sed metus nec dui egestas condimentum. Aliquam id varius tellus, ut lobortis sem. Quisque at vehicula nunc.
 
