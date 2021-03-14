@@ -96,7 +96,7 @@ theme = "LoveIt"
     [params.home.profile]
       enable = true
       # URL of avatar shown in home page
-      avatarURL = "markallison.jpg"
+      avatarURL = "/images/markallison.jpg"
       # LoveIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)
       title = "Welcome"
       # subtitle shown in home page
