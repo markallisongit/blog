@@ -13,11 +13,11 @@ I spend most of my professional time now doing technical architecture and consul
 
 I recently (March 2021) became a Microsoft certified Azure Solutions Architect Expert. 
 
-![Azure Solutions Architect Expert Badge](azure-solutions-architect-expert-300x300.png)
+![Azure Solutions Architect Expert Badge](/images/azure-solutions-architect-expert-300x300.png)
 
 From 2000-2006 I was also awarded the MVP award for SQL Server, but kids came along and I didn't keep that up.
 
-![Azure Solutions Architect Expert Badge](mvp-banner-fb-300.jpg)
+![Azure Solutions Architect Expert Badge](/images/mvp-banner-fb-300.jpg)
 
 ## Crazy stuff :grinning:
 

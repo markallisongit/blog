@@ -41,9 +41,53 @@ theme = "LoveIt"
 
   [params.list]
     paginate = 20
+    # date format (month and day)
     dateFormat = "2-Jan"
     rss = 10    
 
+  [params.page]
+    # LoveIt NEW | 0.2.0 whether to hide a page from home page
+    hiddenFromHomePage = false
+    # LoveIt NEW | 0.2.0 whether to hide a page from search results
+    hiddenFromSearch = false
+    # LoveIt NEW | 0.2.0 whether to enable twemoji
+    twemoji = false
+    # whether to enable lightgallery
+    lightgallery = false
+    # LoveIt NEW | 0.2.0 whether to enable the ruby extended syntax
+    ruby = true
+    # LoveIt NEW | 0.2.0 whether to enable the fraction extended syntax
+    fraction = true
+    # LoveIt NEW | 0.2.0 whether to enable the fontawesome extended syntax
+    fontawesome = true
+    # whether to show link to Raw Markdown content of the content
+    linkToMarkdown = false
+    # LoveIt NEW | 0.2.4 whether to show the full text content in RSS
+    rssFullText = false   
+    [params.page.toc]
+      enable = true
+      # whether to keep the static table of the contents in front of the post
+      keepStatic = false
+      # whether to make the table of the contents in the sidebar automatically collapsed
+      auto = true
+    [params.page.code]
+      # whether to show the copy button of the code block
+      copy = true
+      # the maximum number of lines of displayed code by default
+      maxShownLines = 10
+    [params.page.share]
+          enable = true
+          Twitter = true
+          LinkedIn = true
+          Whatsapp = true
+    [params.page.comment]
+        enable = true
+        # Disqus comment config
+        [params.page.comment.disqus]
+          # LoveIt NEW | 0.1.1
+          enable = true
+          # Disqus shortname to use Disqus in posts
+          shortname = "markallison"    
   # Home page config
   [params.home]
     # LoveIt NEW | 0.2.0 amount of RSS pages
@@ -51,8 +95,6 @@ theme = "LoveIt"
     # Home page profile
     [params.home.profile]
       enable = true
-      # Gravatar Email for preferred avatar in home page
-      gravatarEmail = ""
       # URL of avatar shown in home page
       avatarURL = "markallison.jpg"
       # LoveIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)
@@ -60,7 +102,7 @@ theme = "LoveIt"
       # subtitle shown in home page
       subtitle = "A blog about Cloud Computing, Data and DevOps"
       # whether to use typeit animation for subtitle
-      typeit = false
+      typeit = true
       # whether to show social links
       social = true
       # LoveIt NEW | 0.2.0 disclaimer (HTML format is supported)
@@ -78,39 +120,22 @@ theme = "LoveIt"
     Email = "home@markallison.co.uk"
     Twitter = "dataguzzle"
     RSS = true # LoveIt NEW | 0.2.0
-  [params.page]
-    # LoveIt NEW | 0.2.0 whether to hide a page from home page
-    hiddenFromHomePage = false
-    # LoveIt NEW | 0.2.0 whether to hide a page from search results
-    hiddenFromSearch = false
-    # LoveIt NEW | 0.2.0 whether to enable twemoji
-    twemoji = true
-    # whether to enable lightgallery
-    lightgallery = false
-    # LoveIt NEW | 0.2.0 whether to enable the ruby extended syntax
-    ruby = true
-    # LoveIt NEW | 0.2.0 whether to enable the fraction extended syntax
-    fraction = true
-    # LoveIt NEW | 0.2.0 whether to enable the fontawesome extended syntax
-    fontawesome = true
-    # whether to show link to Raw Markdown content of the content
-    linkToMarkdown = true
-    # LoveIt NEW | 0.2.4 whether to show the full text content in RSS
-    rssFullText = false   
-
-  [params.page.share]
-        enable = true
-        Twitter = true
-        LinkedIn = true
-        Whatsapp = true
-  [params.page.comment]
-      enable = true
-      # Disqus comment config
-      [params.page.comment.disqus]
-        # LoveIt NEW | 0.1.1
-        enable = true
-        # Disqus shortname to use Disqus in posts
-        shortname = "markallison"        
+  # TypeIt config
+  [params.typeit]
+    # typing speed between each step (measured in milliseconds)
+    speed = 60
+    # blinking speed of the cursor (measured in milliseconds)
+    cursorSpeed = 1000
+    # character used for the cursor (HTML format is supported)
+    cursorChar = "|"
+    # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
+    duration = 60    
+  [params.analytics]
+    enable = true
+    # Google Analytics
+    [params.analytics.google]
+      id = "G-PLWCT0MJK3"    
+   
 [menu]
   [[menu.main]]
     identifier = "posts"
@@ -150,22 +175,21 @@ theme = "LoveIt"
 [author]
   name = "Mark Allison"
   email = "home@markallison.co.uk"
-[params.analytics]
-  enable = true
-  # Google Analytics
-  [params.analytics.google]
-    id = "G-PLWCT0MJK3"
 
 [markup]
   [markup.highlight]
-    anchorLineNos = false
     codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineAnchors = ""
-    lineNoStart = 1
+    guessSyntax = true
     lineNos = true
     lineNumbersInTable = true
     noClasses = false
-    style = "monokai"
-    tabWidth = 4
+
+[Permalinks]
+  # posts = ":year/:month/:filename"
+  posts = "blog/:filename"    
+
+# Sitemap config
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5  
