@@ -43,7 +43,7 @@ theme = "LoveIt"
       # LoveIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)
       title = "Welcome"
       # subtitle shown in home page
-      subtitle = "Azure Solutions Architect expert"
+      subtitle = "A blog about Cloud Computing, Data and DevOps"
       # whether to use typeit animation for subtitle
       typeit = false
       # whether to show social links
