@@ -33,7 +33,7 @@ theme = "LoveIt"
 
   # Footer config
   [params.footer]
-    enable = true
+    enable = false
     # LoveIt NEW | 0.2.0 whether to show Hugo and theme info
     hugo = true
     # LoveIt NEW | 0.2.0 whether to show copyright info
@@ -122,10 +122,10 @@ theme = "LoveIt"
     pre = ""
     # you can add extra information after the name (HTML format is supported), such as icons
     post = ""
-    name = "Posts"
-    url = "/posts/"
+    name = "Blog"
+    url = "/blog/"
     # title will be shown when you hover on this menu link
-    title = "Show all posts"
+    title = "Show all blog posts"
     weight = 1
   [[menu.main]]
     identifier = "tags"
