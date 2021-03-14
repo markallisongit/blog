@@ -9,7 +9,7 @@ theme = "LoveIt"
 [params]
   version = "0.2.X"
   defaultTheme = "dark"
-  gitRepo = "https://github.com/markallisongit/blog"
+  gitRepo = ""
   dateFormat = "Mon, 2 January 2006"
 
 # Header config
