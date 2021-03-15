@@ -21,7 +21,7 @@ theme = "LoveIt"
     
     [params.header.title]
       name = "Mark Allison"
-      pre = "<i class='fas fa-home fa-fw'></i>"
+      pre = "<i class='fas fa-home fa-fw'>&nbsp;</i>"
       post = ""
       typeit = false
 
@@ -140,7 +140,7 @@ theme = "LoveIt"
   [[menu.main]]
     identifier = "posts"
     # you can add extra information before the name (HTML format is supported), such as icons
-    pre = "<i class='fas fa-blog fa-fw'></i>"
+    pre = "<i class='fas fa-blog fa-fw'>&nbsp;</i>"
     # you can add extra information after the name (HTML format is supported), such as icons
     post = ""
     name = "Posts"
@@ -150,7 +150,7 @@ theme = "LoveIt"
     weight = 1
   [[menu.main]]
     identifier = "tags"
-    pre = "<i class='fas fa-tags fa-fw'></i>"
+    pre = "<i class='fas fa-tags fa-fw'>&nbsp;</i>"
     post = ""
     name = "Tags"
     url = "/tags/"
@@ -158,7 +158,7 @@ theme = "LoveIt"
     weight = 2
   [[menu.main]]
     identifier = "categories"
-    pre = "<i class='far fa-folder'></i>"
+    pre = "<i class='far fa-folder'>&nbsp;</i>"
     post = ""
     name = "Categories"
     url = "/categories/"
@@ -166,7 +166,7 @@ theme = "LoveIt"
     weight = 3
   [[menu.main]]
     identifier = "about"
-    pre = "<i class='far fa-address-card fa-fw'></i>"
+    pre = "<i class='far fa-address-card fa-fw'>&nbsp;</i>"
     post = ""
     name = "About"
     url = "/about/"
