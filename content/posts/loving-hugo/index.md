@@ -12,7 +12,7 @@ tags: ["blog","hugo"]
 
 Even though I'm late to the party, having not blogged for a while (see my older posts [here](https://sabin.io/blog/author/Mark%20Allison)), I came across a bug in Hugo today. To get a little bit more performance from my site I decided to use the `--minify` option in the `hugo` command for the `production` build on netlify's build server in `netlify.toml` as you can see [here](https://github.com/markallisongit/blog/blob/f21a89b727b2d2f84d0dc54ea0724d61e3adf9f8/netlify.toml#L3).
 
-My navbar didn't have icons in it before, and I thought it would looks nicer with some icons added. On my local server it looked fine:
+My navbar didn't have icons in it before, and I thought it would look nicer with some icons added. On my local server it looked fine:
 
 {{< figure class="img-fluid" src="navbar-local-build.png" caption="local" >}}
 
