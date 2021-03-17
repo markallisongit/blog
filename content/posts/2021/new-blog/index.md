@@ -1,7 +1,7 @@
 ---
 title:  "New Blog"
 date: 2021-03-07T17:30:59
-lastmod: 2021-03-12T18:01:23
+lastmod: 2021-03-17T22:30:23
 categories: ["blog"]
 tags: ["blog","hugo"]
 author: "Mark"
@@ -22,6 +22,8 @@ I've moved away from Wordpress as it was getting bloated, complicated to manage 
 * source controlled
 
 I can now write blog posts in [markdown](https://www.markdownguide.org/) in [vscode](https://code.visualstudio.com/) and then push my changes to GitHub which lets me have a history, I can edit from anywhere by pulling and pushing from any machine, even my phone.
+
+Here are some older posts of mine [here](https://sabin.io/blog/author/Mark%20Allison).
 
 I'm using the awesome [Hugo](https://gohugo.io/) static site generator, which generates the site from some template html and content contained in markdown files. I push this to my [GitHub repo](https://github.com/markallisongit/blog) and the website gets rebuilt on the fly using [netlify's](https://www.netlify.com/) CI/CD pipeline.
 
