@@ -14,7 +14,7 @@ I spend most of my professional time now doing technical architecture and consul
 I recently (March 2021) became a Microsoft certified Azure Solutions Architect Expert. 
 
 {{< style "img { height: 200px; }" >}}
-![Azure Solutions Architect Expert Badge](microsoft-certified-expert-badge.svg)
+![Azure Solutions Architect Expert Badge](azure-solutions-architect-expert-600x600.png)
 {{< /style >}}
 
 [Verify here](https://www.youracclaim.com/badges/513d9704-2878-4fd0-b0e7-f43a423af51c/linked_in)
