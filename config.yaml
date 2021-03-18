@@ -1,0 +1,142 @@
+baseURL: 'https://markallison.co.uk/'
+defaultContentLanguage: en
+languageCode: en
+title: Mark Allison
+enableEmoji: 'true'
+enableRobotsTXT: true
+theme: LoveIt
+
+params:
+  version: 0.2.X
+  defaultTheme: auto
+  gitRepo: ''
+  dateFormat: 'Mon, 2 January 2006'
+  header:
+    desktopMode: fixed
+    mobileMode: auto
+    title:
+      name: Mark Allison
+      pre: <i class='fas fa-home fa-fw'>&nbsp;</i>
+      post: ''
+      typeit: false
+  footer:
+    enable: false
+    hugo: true
+    copyright: true
+    author: true
+    since: 2021
+  section:
+    paginate: 20
+    dateFormat: 2-Jan
+    rss: 10
+  list:
+    paginate: 20
+    dateFormat: 2-Jan
+    rss: 10
+  page:
+    hiddenFromHomePage: false
+    hiddenFromSearch: false
+    twemoji: false
+    lightgallery: false
+    ruby: true
+    fraction: true
+    fontawesome: true
+    linkToMarkdown: false
+    rssFullText: false
+    toc:
+      enable: true
+      keepStatic: false
+      auto: true
+    code:
+      copy: true
+      maxShownLines: 10
+    share:
+      enable: true
+      Twitter: true
+      LinkedIn: true
+      Whatsapp: true
+    comment:
+      enable: true
+      disqus:
+        enable: true
+        shortname: markallison
+  home:
+    rss: 10
+    profile:
+      enable: true
+      avatarURL: /images/markallison.jpg
+      title: Welcome
+      subtitle: 'A blog about Cloud Computing, Data and DevOps'
+      typeit: true
+      social: true
+      disclaimer: ''
+    posts:
+      enable: true
+      paginate: 6
+      defaultHiddenFromHomePage: false
+  social:
+    GitHub: markallisongit
+    Linkedin: markallison
+    Email: home@markallison.co.uk
+    Twitter: dataguzzle
+    RSS: true
+  typeit:
+    speed: 60
+    cursorSpeed: 1000
+    cursorChar: '|'
+    duration: 60
+  analytics:
+    enable: true
+    google:
+      id: G-PLWCT0MJK3
+
+menu:
+  main:
+    - identifier: posts
+      pre: <i class='fas fa-blog fa-fw'></i>
+      post: ''
+      name: Posts
+      url: /posts/
+      title: Show all blog posts
+      weight: 1
+    - identifier: tags
+      pre: <i class='fas fa-tags fa-fw'></i>
+      post: ''
+      name: Tags
+      url: /tags/
+      title: ''
+      weight: 2
+    - identifier: categories
+      pre: <i class='far fa-folder'></i>
+      post: ''
+      name: Categories
+      url: /categories/
+      title: ''
+      weight: 3
+    - identifier: about
+      pre: <i class='far fa-address-card fa-fw'></i>
+      post: ''
+      name: About
+      url: /about/
+      title: ''
+      weight: 4
+
+author:
+  name: Mark Allison
+  email: home@markallison.co.uk
+
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: false
+
+Permalinks:
+  posts: 'blog/:filename'
+
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
