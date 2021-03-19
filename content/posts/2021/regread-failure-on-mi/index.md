@@ -6,6 +6,8 @@ author: "Mark"
 tags: ["azure","sql-managed-instance","ssms"]
 categories: ["azure"]
 lightgallery: true
+featuredImagePreview: featured-image.jpeg
+featuredImage: featured-image.jpeg
 ---
 ## The problem 
 
