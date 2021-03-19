@@ -7,7 +7,7 @@ author: "Mark"
 categories: ["azure"]
 tags: ["azure","sql-managed-instance","maintenance"]
 fontawesome: true
-featuredImage: featured-image.jpg
+featuredImage: featured-image.png
 ---
 
 ## Maintenance Window now in Preview
