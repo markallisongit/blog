@@ -1,7 +1,6 @@
 ---
 title: "Az.Sql Module won't load"
 date: 2021-03-16T18:17:22Z
-lastmod: 2021-03-16T20:55:22Z
 draft: false
 author: "Mark"
 tags: ["azure","powershell","sql-managed-instance"]

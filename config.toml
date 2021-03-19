@@ -5,6 +5,8 @@ title = "Mark Allison"
 enableEmoji = "true"
 enableRobotsTXT = true
 theme = "LoveIt"
+enableGitInfo = true
+
 
 [params]
   version = "0.2.X"

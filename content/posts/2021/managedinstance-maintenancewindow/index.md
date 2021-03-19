@@ -2,7 +2,6 @@
 title: "⚠ Careful with Maintenance Window"
 subtitle: "It might bite you"
 date: 2021-03-16T13:41:54Z
-lastmod: 2021-03-16T13:41:54Z
 draft: true
 author: "Mark"
 categories: ["azure"]

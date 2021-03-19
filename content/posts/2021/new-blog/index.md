@@ -1,7 +1,6 @@
 ---
 title:  "New Blog"
 date: 2021-03-07T17:30:59
-lastmod: 2021-03-17T22:30:23
 categories: ["blog"]
 tags: ["blog","hugo"]
 author: "Mark"

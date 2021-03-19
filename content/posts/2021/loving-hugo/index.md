@@ -1,7 +1,6 @@
 ---
 title: "Loving Hugo"
 date: 2021-03-15T12:02:11Z
-lastmod: 2021-03-15T12:22:11Z
 draft: false
 author: "Mark"
 categories: ["blog"]
