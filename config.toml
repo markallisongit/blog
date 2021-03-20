@@ -83,11 +83,11 @@ enableGitInfo = true
           LinkedIn = true
           Whatsapp = true
     [params.page.comment]
-        enable = true
+        enable = false
         # Disqus comment config
         [params.page.comment.disqus]
           # LoveIt NEW | 0.1.1
-          enable = true
+          enable = false
           # Disqus shortname to use Disqus in posts
           shortname = "markallison"    
   # Home page config
