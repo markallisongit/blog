@@ -84,13 +84,14 @@ enableGitInfo = true
           Whatsapp = true
     [params.page.comment]
         enable = false
-        # Disqus comment config
-        [params.page.comment.disqus]
-          # LoveIt NEW | 0.1.1
-          enable = false
-          # Disqus shortname to use Disqus in posts
-          shortname = "markallison"    
-  # Home page config
+      [params.page.comment.utterances]
+        enable = false
+        # owner/repo
+        repo = "markallisongit/blog"
+        issueTerm = "pathname"
+        label = ""
+        lightTheme = "github-light"
+        darkTheme = "github-dark"  # Home page config
   [params.home]
     # LoveIt NEW | 0.2.0 amount of RSS pages
     rss = 10
