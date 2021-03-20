@@ -83,9 +83,9 @@ enableGitInfo = true
           LinkedIn = true
           Whatsapp = true
     [params.page.comment]
-        enable = false
+        enable = true
       [params.page.comment.utterances]
-        enable = false
+        enable = true
         # owner/repo
         repo = "markallisongit/blog"
         issueTerm = "pathname"
