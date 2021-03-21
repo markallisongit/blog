@@ -1,10 +1,11 @@
 ---
-title: "Loving Hugo"
+title: Loving Hugo
 date: 2021-03-15T12:02:11Z
+lastmod: 2021-03-19T17:30:59
 draft: false
-author: "Mark"
-categories: ["blog"]
-tags: ["blog","hugo"]
+author: Mark
+categories: [blog]
+tags: [blog, hugo]
 ---
 
 ## Hugo is great

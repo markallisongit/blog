@@ -1,10 +1,10 @@
 ---
-title:  "New Blog"
+title: New Blog
 date: 2021-03-07T17:30:59
-categories: ["blog"]
-tags: ["blog","hugo"]
-author: "Mark"
-featuredImagePreview: "featured-image-preview.jpg"
+lastmod: 2021-03-19T17:30:59
+categories: [blog]
+tags: [blog,hugo]
+author: Mark
 ---
 
 ## Built with Hugo

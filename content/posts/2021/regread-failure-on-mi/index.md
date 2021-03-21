@@ -1,13 +1,12 @@
 ---
-title: "EXECUTE denied on Managed Instance"
+title: EXECUTE denied on Managed Instance
 date: 2021-03-17T12:20:04Z
+lastmod: 2021-03-17T12:20:04Z
 draft: false
-author: "Mark"
-tags: ["azure","sql-managed-instance","ssms"]
-categories: ["azure"]
+author: Mark
+tags: [azure, sql-managed-instance, ssms]
+categories: [azure]
 lightgallery: true
-featuredImagePreview: featured-image.jpeg
-featuredImage: featured-image.jpeg
 ---
 ## The problem 
 

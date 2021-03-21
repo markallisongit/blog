@@ -1,9 +1,10 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
+lastmod: {{ .Date }}
 draft: true
-author: "Mark"
+author: Mark
 tags: []
-categories: ["uncategorized"]
+categories: [uncategorized]
 lightgallery: false
 ---

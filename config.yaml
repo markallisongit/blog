@@ -5,7 +5,7 @@ title: Mark Allison
 enableEmoji: 'true'
 enableRobotsTXT: true
 theme: LoveIt
-enableGitInfo: true
+enableGitInfo: false
 params:
   version: 0.2.X
   defaultTheme: auto

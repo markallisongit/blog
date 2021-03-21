@@ -1,13 +1,13 @@
 ---
-title: "⚠ Careful with Maintenance Window"
-subtitle: "It might bite you"
+title: ⚠ Careful with Maintenance Window
+subtitle: It might bite you
 date: 2021-03-19T13:41:54Z
+lastmod: 2021-03-19T13:41:54Z
 draft: false
-author: "Mark"
-categories: ["azure"]
-tags: ["azure","sql-managed-instance","maintenance"]
+author: Mark
+categories: [azure]
+tags: [azure, sql-managed-instance, maintenance]
 fontawesome: true
-featuredImage: featured-image.png
 ---
 
 ## Maintenance Window now in Preview
