@@ -6,6 +6,7 @@ enableEmoji: 'true'
 enableRobotsTXT: true
 theme: LoveIt
 enableGitInfo: false
+
 params:
   version: 0.2.X
   defaultTheme: auto
@@ -71,7 +72,7 @@ params:
       avatarURL: /images/markallison.jpg
       title: Welcome
       subtitle: 'A blog about Cloud Computing, Data and DevOps'
-      typeit: true
+      typeit: false
       social: true
       disclaimer: ''
     posts:
@@ -93,6 +94,7 @@ params:
     enable: true
     google:
       id: G-PLWCT0MJK3
+
 menu:
   main:
     - identifier: posts
@@ -123,9 +125,11 @@ menu:
       url: /about/
       title: ''
       weight: 4
+
 author:
   name: Mark Allison
   email: home@markallison.co.uk
+
 markup:
   highlight:
     codeFences: true
@@ -133,8 +137,10 @@ markup:
     lineNos: true
     lineNumbersInTable: true
     noClasses: false
+
 Permalinks:
   posts: 'blog/:filename'
+
 sitemap:
   changefreq: weekly
   filename: sitemap.xml

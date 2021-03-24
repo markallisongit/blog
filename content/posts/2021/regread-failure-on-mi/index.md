@@ -68,4 +68,13 @@ I will update this blog post when Microsoft have provided some input.
 
 ## Update
 
-(still waiting)
+[According to Microsoft](https://docs.microsoft.com/en-us/azure/azure-sql/database/sql-database-vulnerability-assessment-rules) read and write to the registry via extended stored procedures should be revoked for all non-dbo users. The Vulnerability Assessment tool notified our team of High security vulnerability `VA2110` so we locked it down and removed access to read/write the registry by low-privileged users.
+### Rule VA2110
+
+> Execute permissions to access the registry should be revoked.
+
+> Registry extended stored procedures allow Microsoft SQL Server to read write and enumerate values and keys in the registry. They are used by **Enterprise Manager** to configure the server. This rule checks that the permissions to execute registry extended stored procedures have been revoked from all users (other than dbo).
+
+Funnily enough if you read that description carefully you will see a reference to Enterprise Manager! Anyone remember that?
+
+{{< image src="em.jpg" caption="SQL Server Enterprise Manager" >}}
