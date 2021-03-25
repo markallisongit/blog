@@ -1,7 +1,7 @@
 ---
 title: EXECUTE denied on Managed Instance
 date: 2021-03-17T12:20:04Z
-lastmod: 2021-03-17T12:20:04Z
+lastmod: 2021-03-25T09:00:04Z
 draft: false
 author: Mark
 tags: [azure, sql-managed-instance, ssms]
@@ -66,7 +66,7 @@ I've raised a Support Request with Microsoft Azure to see what they have to say,
 
 I will update this blog post when Microsoft have provided some input.
 
-## Update
+## Update 25th March 2021
 
 [According to Microsoft](https://docs.microsoft.com/en-us/azure/azure-sql/database/sql-database-vulnerability-assessment-rules) read and write to the registry via extended stored procedures should be revoked for all non-dbo users. The Vulnerability Assessment tool notified our team of High security vulnerability `VA2110` so we locked it down and removed access to read/write the registry by low-privileged users.
 ### Rule VA2110
@@ -78,3 +78,7 @@ I will update this blog post when Microsoft have provided some input.
 Funnily enough if you read that description carefully you will see a reference to Enterprise Manager! Anyone remember that?
 
 {{< image src="em.jpg" caption="SQL Server Enterprise Manager" >}}
+
+Despite me pointing out the problem with this recommendation, the Microsoft Support Engineer didn't reply to my request to get this changed. He also confirmed that system databases get replicated in a Managed Instance. The curiosity in me really wants to know how this works and there are some hints on the Managed Instance architecture page, but it looks like the MI is using LRS blob storage block-level replication to move data around rather than an availability group for the General Service Tier, at least.
+
+After all, it is a Managed Instance, and I shouldn't need to concern myself with such details.
