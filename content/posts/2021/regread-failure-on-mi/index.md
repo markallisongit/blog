@@ -79,6 +79,6 @@ Funnily enough if you read that description carefully you will see a reference t
 
 {{< image src="em.jpg" caption="SQL Server Enterprise Manager" >}}
 
-Despite me pointing out the problem with this recommendation, the Microsoft Support Engineer didn't reply to my request to get this changed. He also confirmed that system databases get replicated in a Managed Instance. The curiosity in me really wants to know how this works and there are some hints on the Managed Instance architecture page, but it looks like the MI is using LRS blob storage block-level replication to move data around rather than an availability group for the General Service Tier, at least.
+Despite me pointing out the problem with this recommendation, the Microsoft Support Engineer didn't reply to my request to get this changed. He also confirmed that system databases get replicated in a Managed Instance. The curiosity in me really wants to know how this works and there are some hints on the [Managed Instance architecture page](https://docs.microsoft.com/en-us/azure/azure-sql/database/high-availability-sla), but it looks like the MI is using LRS blob storage block-level replication to move data around rather than an availability group for the General Service Tier, at least.
 
 After all, it is a Managed Instance, and I shouldn't need to concern myself with such details.
