@@ -77,7 +77,7 @@ params:
       disclaimer: ''
     posts:
       enable: true
-      paginate: 6
+      paginate: 10
       defaultHiddenFromHomePage: false
   social:
     GitHub: markallisongit
