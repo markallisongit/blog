@@ -9,6 +9,9 @@ I've been working with data since 1995 and started on SQL Server 4.21 on OS/2 Wa
 
 I spend most of my professional time now doing technical architecture and consulting for clients using Microsoft Azure, again with a focus on data, but also I have developed an interest in automation and continuous delivery of data platforms in the Cloud.
 
+### Old blog posts
+Can be found here at [Sabin.io](https://sabin.io/blog/author/Mark%20Allison)
+
 ## Certified
 
 I recently (March 2021) became a Microsoft certified Azure Solutions Architect Expert. 
