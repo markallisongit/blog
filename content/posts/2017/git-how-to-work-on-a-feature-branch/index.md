@@ -2,9 +2,9 @@
 title: "Git How to Work on a Feature Branch"
 date: 2017-05-30T18:03:09Z
 lastmod: 2017-05-30T18:03:09Z
-draft: true
+draft: false
 author: Mark
-tags: [git,source-control]
+tags: [git,source-control,git-flow]
 categories: [git]
 lightgallery: true
 ---
