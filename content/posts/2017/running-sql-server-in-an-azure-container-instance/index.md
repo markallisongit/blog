@@ -36,11 +36,8 @@ If you would like to see a demo of this in action see the video below:
 
 1. Log in to Microsoft Azure.
 1. Open an Azure Cloud Shell and choose bash (PowerShell should also work).
-1. Create a new resource group. Containers require an empty resource group right now, not sure if this will change in the future.
-
-`az group create –name containerRG –location eastus`
-
-Now create your MSSQL container with:
+1. Create a new resource group. Containers require an empty resource group right now, not sure if this will change in the future. `az group create –name containerRG –location eastus`
+1. Now create your MSSQL container with:
 
 `az container create --image microsoft/mssql-server-linux --name mssql-container-group –resource-group containerRG --cpu 1 --memory 3.5 --port 1433 --ip-address public -e ACCEPT_EULA=Y MSSQL_SA_PASSWORD=<strong_password> MSSQL_PID=Developer MSSQL_COLLATION=Latin1_General_CI_AS MSSQL_ENABLE_HADR=Y --location eastus`
 
@@ -56,11 +53,9 @@ We can verify by connecting to it from `sqlcmd` in Azure cloud shell or by Power
 
 To view the logs we can do:
 
-az container logs --resource-group containerRG --name mssql-container-group
+`az container logs --resource-group containerRG --name mssql-container-group`
 
-image
-
-<snip>
+{{< image src="logs.png" caption="view the ERRORLOG" >}}
 
 Let’s delete the container with:
 
