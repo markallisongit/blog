@@ -27,11 +27,11 @@ params:
     author: true
     since: 2021
   section:
-    paginate: 20
+    paginate: 50
     dateFormat: 2-Jan
     rss: 10
   list:
-    paginate: 20
+    paginate: 6
     dateFormat: 2-Jan
     rss: 10
   page:
