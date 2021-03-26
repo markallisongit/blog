@@ -155,5 +155,3 @@ SweetPea-AG_SWEETPEA          Online  SweetPea-AG      Network Name
 The cluster is now set up over two physical sites and with a witness for the cluster in the Cloud. 
 
 Nice.
-
-> Originally published at https://sabin.io/blog/using-a-cloud-witness-for-clusters/

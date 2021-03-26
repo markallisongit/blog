@@ -89,5 +89,3 @@ Suggestions for the Sentry One team:
 1. Please allow the Sentry One service to use Group Managed Service Accounts
 1. Please remove the requirement for Sentry One to be a Local Admin on Windows on targets
 1. Please remove the requirement for Sentry One to be sysadmin on SQL Server instances and to use the finer grained permissions in SQL Server
-
-> Originally published at https://sabin.io/blog/hardening-sentry-one-for-security/

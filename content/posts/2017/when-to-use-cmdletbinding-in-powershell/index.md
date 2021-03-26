@@ -143,5 +143,3 @@ Use `CmdletBinding` in all your public and internal functions.
 Write clean code.
 
 Automate everything.
-
-> Originally published at https://sabin.io/blog/when-to-use-cmdletbinding-in-powershell/

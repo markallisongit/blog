@@ -109,5 +109,3 @@ We have a bad release, we prevented it from getting it to production, and we kno
 As a developer that writes database code, start getting into the habit of writing tests. Once you’ve done it for a while they don’t take long to do. They will save your bacon one day! You will have reliable releases. Consider using a performance tool like Sentry One to monitor a performance test environment so that you have access to a rich set of metrics to run tests against. Make sure you have a production-like workload running in your performance test environment otherwise your tests will be meaningless. This is a topic for another blog post!
 
 The key message here is Automation. Here we have automated our functional tests, our performance tests, our build, the release and gathering of performance data. All a developer has to do is write database code, functional tests and push to git and VSTS and PowerShell does the rest.
-
-> Originally published at https://sabin.io/blog/automating-sql-server-performance-testing/

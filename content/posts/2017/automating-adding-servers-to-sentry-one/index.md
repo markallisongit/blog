@@ -78,5 +78,3 @@ $result | ? {$_.InstanceIsWatchedBy -notmatch "PerformanceAdvisor|EventManager"}
 ```
 
 As a final check, load SentryOne and have a look to make sure everything looks fine.
-
-> Originally published at https://sabin.io/blog/automating-adding-servers-to-sentry-one/

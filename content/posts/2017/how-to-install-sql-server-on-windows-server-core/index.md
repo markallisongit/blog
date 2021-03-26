@@ -160,5 +160,3 @@ Machine Properties:
    Process architecture:          64 Bit
    OS clustered:                  No
 ```
-
-> Originally published at https://sabin.io/blog/how-to-install-sql-server-on-windows-server-core/
