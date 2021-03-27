@@ -19,9 +19,9 @@ I recently (March 2021) became a Microsoft certified Azure Solutions Architect E
 
 [Verify here](https://www.youracclaim.com/badges/513d9704-2878-4fd0-b0e7-f43a423af51c/linked_in)
 
-From 2000-2006 I received the MVP award for SQL Server, but kids came along and I didn't keep that up.
+From 2002-2005 I received the MVP award for SQL Server, but kids came along and I didn't keep that up. [Verify here](https://mvp.microsoft.com/en-us/PublicProfile/5703?fullName=Mark%20D%20Allison).
 
-![Azure Solutions Architect Expert Badge](mvp-banner-fb-300.jpg)
+![MVP Badge](mvp-banner-fb-300.jpg)
 
 ## Crazy stuff :grinning:
 
