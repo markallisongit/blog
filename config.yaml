@@ -94,6 +94,12 @@ params:
     enable: true
     google:
       id: G-PLWCT0MJK3
+  search:
+    enable: true
+    type: lunr
+    contentLength: 4000
+    maxResultLength: 10
+    snippetLength: 30
 
 menu:
   main:
