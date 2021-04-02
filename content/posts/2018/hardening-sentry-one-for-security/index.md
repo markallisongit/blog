@@ -5,7 +5,6 @@ lastmod: 2018-04-27T11:04:16Z
 draft: false
 author: Mark
 tags: [sentry-one,monitoring]
-categories: [monitoring]
 lightgallery: true
 ---
 If you have an environment where you need to lock down Sentry One as much as possible, then this article should help. It is well known that the Sentry One service account needs to be a member of the `Local Administrators` group in each server it monitors, and also a member of the `sysadmin` role for each SQL Server instance. At the moment this is still a requirement, but if you can live without the Windows metrics, then you could run Sentry One in **Limited Mode** which will only gather SQL Server specific metrics. Some of our clients run in this configuration for security reasons.

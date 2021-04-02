@@ -5,7 +5,6 @@ lastmod: 2017-06-11T17:23:02Z
 draft: false
 author: Mark
 tags: [powershell]
-categories: [powershell]
 lightgallery: true
 ---
 ## Clean Code

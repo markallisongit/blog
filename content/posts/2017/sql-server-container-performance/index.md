@@ -5,7 +5,6 @@ lastmod: 2017-02-12T22:19:17Z
 draft: false
 author: Mark
 tags: [containers,sql-server]
-categories: [containers]
 lightgallery: true
 ---
 ## Is SQL Server in a container faster than a VM?

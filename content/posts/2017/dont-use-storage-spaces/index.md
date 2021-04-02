@@ -4,8 +4,7 @@ date: 2017-07-24T16:51:18Z
 lastmod: 2017-07-24T16:51:18Z
 draft: true
 author: Mark
-tags: [storage-spaces]
-categories: [storage]
+tags: [storage-spaces,storage]
 lightgallery: false
 ---
 … if you care about performance in the slightest bit. That’s it really. You don’t need to read any further.

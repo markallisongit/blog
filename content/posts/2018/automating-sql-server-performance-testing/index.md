@@ -5,7 +5,6 @@ lastmod: 2018-04-15T14:01:48Z
 draft: false
 author: Mark
 tags: [sql-server,performance,testing]
-categories: [testing]
 lightgallery: true
 ---
 You run performance tests as well as functional tests when deploying new code changes to SQL Server, right? Not many people do, I think you should, and this article will show you how to do it by harnessing an existing performance tool, rather than writing your own monitoring infrastructure from scratch.

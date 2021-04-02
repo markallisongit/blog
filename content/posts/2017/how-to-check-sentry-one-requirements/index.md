@@ -5,7 +5,6 @@ lastmod: 2017-11-12T15:37:18Z
 draft: false
 author: Mark
 tags: [sentry-one,monitoring,powershell]
-categories: [monitoring]
 lightgallery: true
 ---
 I was at a client site recently and implemented Sentry One for them, a great monitoring system for SQL Server. It proved challenging because some servers were in a DMZ on a separate network and domain and some servers were in the same domain. All servers connected via a router and were firewalled off from each other with only the minimum ports open required for them to fully function and communicate.

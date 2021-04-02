@@ -10,7 +10,7 @@ enableGitInfo: false
 params:
   version: 0.2.X
   defaultTheme: auto
-  gitRepo: ''
+  gitRepo: 'markallisongit'
   dateFormat: 'Mon, 2 January 2006'
   header:
     desktopMode: fixed
@@ -117,20 +117,13 @@ menu:
       url: /tags/
       title: ''
       weight: 2
-    - identifier: categories
-      pre: <i class='far fa-folder'></i>
-      post: ''
-      name: Categories
-      url: /categories/
-      title: ''
-      weight: 3
     - identifier: about
       pre: <i class='far fa-address-card fa-fw'></i>
       post: ''
       name: About
       url: /about/
       title: ''
-      weight: 4
+      weight: 3
 
 author:
   name: Mark Allison

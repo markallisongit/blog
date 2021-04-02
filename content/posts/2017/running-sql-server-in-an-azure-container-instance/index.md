@@ -5,7 +5,6 @@ lastmod: 2017-10-24T15:50:31Z
 draft: false
 author: Mark
 tags: [sql-server,azure,containers,azure-container-instances]
-categories: [containers]
 lightgallery: true
 ---
 Azure Container Instances are still in Preview and not officially available for Windows yet, which made me smile. It took me a while to figure out how to get this working so I thought I’d share what I’ve found. Containers are great for lightweight testing of code before deployment to production servers because they can be created so quickly and they give the same environment to test in very reliably. Now that Microsoft is offering container instances in Azure it means you don’t have to worry about provisioning and configuring your own docker host/cluster. The options for deploying SQL Server are really getting large now, look at this list below!

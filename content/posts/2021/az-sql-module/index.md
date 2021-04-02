@@ -5,7 +5,6 @@ lastmod: 2021-03-16T18:17:22Z
 draft: false
 author: Mark
 tags: [azure, powershell, sql-managed-instance]
-categories: [powershell]
 lightgallery: true
 ---
 

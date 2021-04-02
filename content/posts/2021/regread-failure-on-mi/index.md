@@ -5,7 +5,6 @@ lastmod: 2021-03-25T09:00:04Z
 draft: false
 author: Mark
 tags: [azure, sql-managed-instance, ssms]
-categories: [azure]
 lightgallery: true
 ---
 ## The problem 

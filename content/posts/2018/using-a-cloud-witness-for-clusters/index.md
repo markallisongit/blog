@@ -5,7 +5,6 @@ lastmod: 2018-06-08T10:28:43Z
 draft: false
 author: Mark
 tags: [sql-server, sql-server-2016, sql-server-cluster, cluster, cloud-witness]
-categories: [sqlserver]
 lightgallery: true
 ---
 

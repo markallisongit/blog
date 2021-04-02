@@ -5,7 +5,6 @@ lastmod: 2017-11-20T15:20:19Z
 draft: false
 author: Mark
 tags: [powershell,sentry-one,monitoring]
-categories: [monitoring]
 lightgallery: false
 ---
 ## Overview

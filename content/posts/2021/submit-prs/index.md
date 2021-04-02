@@ -5,7 +5,6 @@ lastmod: 2021-03-24T10:58:39Z
 draft: false
 author: Mark
 tags: [pull-request,contribution]
-categories: [contribution]
 lightgallery: true
 ---
 ## Found an error in Microsoft documentation?

@@ -5,7 +5,6 @@ lastmod: 2017-03-12T21:38:39Z
 draft: false
 author: Mark
 tags: [sql-server,replication]
-categories: [sqlserver]
 lightgallery: true
 ---
 ## How to move a replication subscriber to a new server with no downtime to the publisher?

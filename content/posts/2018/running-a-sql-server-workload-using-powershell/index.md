@@ -5,7 +5,6 @@ lastmod: 2018-02-15T14:41:18Z
 draft: false
 author: Mark
 tags: [powershell,sqlserver,testing]
-categories: [powershell]
 lightgallery: false
 ---
 In February 2018, myself and Paul Anderton gave a presentation on how to correlate database deployments with performance issues within the context of a DevOps pipeline. We used Sentry One as our monitoring tool in a Performance Test environment so that we could catch badly performing deployments before they got to production and caused havoc. If you would like to see the recorded video, then you can download it from here: http://info.sentryone.com/partner-webinar-performance-problems

@@ -5,7 +5,6 @@ lastmod: 2017-08-27T16:20:35Z
 draft: false
 author: Mark
 tags: [sql-server,devops,jenkins,containers]
-categories: [containers]
 lightgallery: true
 ---
 ## Why use Windows Containers?

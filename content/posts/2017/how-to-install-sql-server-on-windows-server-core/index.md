@@ -5,7 +5,6 @@ lastmod: 2017-07-20T16:54:52Z
 draft: false
 author: Mark
 tags: [sql-server,windows-server-core,windows]
-categories: [sqlserver]
 lightgallery: true
 ---
 As part of automation of database and application deployments, it makes sense to be able to create new SQL Server instances quickly and with minimal resources. I have already explored containers and written about it on this blog, but I’d like to turn your attention to setting up SQL Server on Windows Server Core for those of you that run SQL Server on-premise or within VMs in the cloud.

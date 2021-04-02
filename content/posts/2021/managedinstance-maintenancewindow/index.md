@@ -5,7 +5,6 @@ date: 2021-03-19T13:41:54Z
 lastmod: 2021-03-19T13:41:54Z
 draft: false
 author: Mark
-categories: [azure]
 tags: [azure, sql-managed-instance, maintenance]
 fontawesome: true
 ---

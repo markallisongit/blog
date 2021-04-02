@@ -5,7 +5,6 @@ lastmod: 2017-05-30T18:03:09Z
 draft: false
 author: Mark
 tags: [git,source-control,git-flow]
-categories: [git]
 lightgallery: true
 ---
 ## How to work on a feature branch but pull in later commits from another branch?

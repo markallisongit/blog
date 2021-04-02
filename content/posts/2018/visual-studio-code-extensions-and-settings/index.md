@@ -5,7 +5,6 @@ lastmod: 2018-02-04T15:09:11Z
 draft: false
 author: Mark
 tags: [vscode]
-categories: [environment]
 lightgallery: false
 ---
 I primarily work in **Visual Studio 2017** and **Visual Studio Code**, using VS2017 for SSDT work, and VS Code for pretty much everything else. VS code is highly configurable, and as it’s a rainy Sunday, I thought I’d share my settings with you in case you are interested. A few colleagues at work have asked me what extensions and settings I have so, here they are as of Feb 2018.
