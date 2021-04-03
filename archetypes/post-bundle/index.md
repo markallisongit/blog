@@ -5,6 +5,5 @@ lastmod: {{ .Date }}
 draft: true
 author: Mark
 tags: []
-categories: [uncategorized]
 lightgallery: false
 ---

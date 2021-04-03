@@ -102,7 +102,9 @@ params:
     snippetLength: 30
   tips:
     enabled: true
-    paymail: marquee@moneybutton.com    
+    paymail: marquee@moneybutton.com
+    amount: 0.10
+    currency: GBP    
 
 menu:
   main:

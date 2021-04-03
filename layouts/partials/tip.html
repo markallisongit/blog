@@ -1,12 +1,13 @@
+{{ if .Site.Params.Tips.enabled }}
 <script src="https://www.moneybutton.com/moneybutton.js"></script>
 
-<div id='money-button'></div>
+<div id='money-button-js'></div>
 <script>
-  const div = document.getElementById('money-button')
+  const div = document.getElementById('money-button-js')
   moneyButton.render(div, {
     to: "{{ .Site.Params.Tips.paymail }}",
-    amount: "0.1",
-    currency: "GBP",
+    amount: "{{ .Site.Params.Tips.amount }}",
+    currency: "{{ .Site.Params.Tips.currency }}",
     label: "Tip jar",
     buttonId: "{{ .Permalink }}",
     buttonData: "{{ .Title }}",
@@ -17,3 +18,4 @@
 </script>
 
 <p>Send a tip. Try it!</p>
+{{ end }}
