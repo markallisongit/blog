@@ -47,7 +47,7 @@ If you want to include money button in your theme, then simply add the partial c
 
 `{{ partial "tip.html" . }}`
 
-Change this in a copy of the single.html file in your own layouts folder rather than changing the theme. This allows you to override the theme with your own changes.
+Change this in a copy of the `single.html` file in your own layouts folder rather than changing the theme. This allows you to override the theme with your own changes.
 
 ### 3. Add Money Button to config file
 
