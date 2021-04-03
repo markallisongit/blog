@@ -1,0 +1,19 @@
+<script src="https://www.moneybutton.com/moneybutton.js"></script>
+
+<div id='money-button'></div>
+<script>
+  const div = document.getElementById('money-button')
+  moneyButton.render(div, {
+    to: "{{ .Site.Params.Tips.paymail }}",
+    amount: "0.1",
+    currency: "GBP",
+    label: "Tip jar",
+    buttonId: "{{ .Permalink }}",
+    buttonData: "{{ .Title }}",
+    type: "tip",
+    onPayment: function (arg) { console.log('onPayment', arg) },
+    onError: function (arg) { console.log('onError', arg) }
+  })
+</script>
+
+<p>Send a tip!</p>
