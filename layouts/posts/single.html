@@ -18,10 +18,10 @@
         </div>
     {{- end -}}
 
-    <article class="page single">
+    <article class="page single">        
         {{- /* Title */ -}}
         <h1 class="single-title animated flipInX">{{ .Title }}</h1>
-
+        
         {{- /* Subtitle */ -}}
         {{- with $params.subtitle -}}
             <h2 class="single-subtitle">{{ . }}</h2>
@@ -47,7 +47,7 @@
                         {{- dict "Categories" . | T "includedInCategories" | safeHTML -}}
                     </span>
                 {{- end -}}
-            </div>
+            </div>            
             <div class="post-meta-line">
                 {{- with .Site.Params.dateformat | default "2006-01-02" | .PublishDate.Format -}}
                     <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="{{ . }}">{{ . }}</time>&nbsp;
@@ -62,7 +62,7 @@
                 {{- end -}}
             </div>
         </div>
-
+        
         {{- /* Featured image */ -}}
         {{- $image := $params.featuredimage -}}
         {{- with .Resources.GetMatch "featured-image" -}}
@@ -73,7 +73,7 @@
                 {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/image.html" -}}
             </div>
         {{- end -}}
-
+        
         {{- /* Static TOC */ -}}
         {{- if ne $toc.enable false -}}
             <div class="details toc" id="toc-static"  kept="{{ if $toc.keepStatic }}true{{ end }}">
@@ -86,15 +86,15 @@
                 </div>
             </div>
         {{- end -}}
-
+        
         {{- /* Content */ -}}
         <div class="content" id="content">
             {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
-            {{ partial "tip.html" }}
         </div>
-
+        {{ partial "tip.html" . }}
+   
         {{- /* Footer */ -}}
-        {{- partial "single/footer.html" . -}}
+        {{- partial "single/footer.html" . -}}        
 
         {{- /* Comment */ -}}
         {{- partial "comment.html" . -}}
