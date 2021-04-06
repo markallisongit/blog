@@ -4,7 +4,7 @@ date: 2021-04-06T17:42:16+01:00
 lastmod: 2021-04-06T17:42:16+01:00
 draft: false
 author: Mark
-tags: [sql-server,sentry]
+tags: [sql-server,sentry-one]
 lightgallery: true
 ---
 ## Should we stop using `--` in SQL comments?
