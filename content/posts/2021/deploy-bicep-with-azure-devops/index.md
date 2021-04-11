@@ -190,12 +190,11 @@ and then called it from a `PowerShell` task in Azure Pipelines with:
   inputs:
     azureSubscription: '<REDACTED>'
     ScriptType: 'FilePath'
-    ScriptPath: 'ndwstorage/ndwstorage/Deploy.ps1'
+    ScriptPath: 'Deploy.ps1'
     ScriptArguments: '-ResourceGroup $(BackupResourceGroup) -Location $(SecondaryLocation) -TemplateFile azuredeploy.bicep -TemplateParameterFile azuredeploy.$(Environment).parameters.json'
     FailOnStandardError: true
     azurePowerShellVersion: 'LatestVersion'
     pwsh: true
-    workingDirectory: 'ndwstorage/ndwstorage' 
 ```
 
 This all works great. When the `AzureResourceManagerTemplateDeployment` task supports bicep I may switch it back. However the PowerShell method **does not work** for Microsoft-Hosted agents.
