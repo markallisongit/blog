@@ -1,16 +1,20 @@
 ---
-title: "Deployments with Bicep and Azure Devops"
-date: 2021-04-09T13:08:20+01:00
-lastmod: 2021-04-09T13:08:20+01:00
+title: "Deployments with Bicep and Azure DevOps"
+date: 2021-04-11T21:08:20+01:00
+lastmod: 2021-04-11T21:08:20+01:00
 draft: false
 author: Mark
-tags: []
+tags: [azure, devops, bicep, azure-pipelines]
 lightgallery: false
 ---
 
 ## Goodbye JSON
 
-Since Microsoft released bicep version 0.3 I thought I'd give it a try because anyone that's authored ARM templates will know, they tend to make your eyes bleed after a while.
+Since Microsoft released [bicep version 0.3](https://github.com/Azure/bicep) I thought I'd give it a try because anyone that's authored ARM templates will know, they tend to make your eyes bleed after a while.
+
+> Bicep aims to drastically simplify the authoring experience with a cleaner syntax, improved type safety, and better support for modularity and code re-use. 
+
+I'm sold!
 
 I reverse-engineered an existing simple template that deploys two storage accounts by using `bicep decompile` and got a template like this:
 
@@ -162,6 +166,7 @@ Connect to your build server, then:
 I like using the `AzureResourceManagerTemplateDeployment` task as it just simplifies the pipeline, but for bicep I wrote a `Deploy.ps1` PowerShell script instead and just referenced that with code like this:
 
 ```powershell
+# Deploy.ps1
 param (
     $ResourceGroup,
     $Location,
@@ -179,6 +184,7 @@ New-AzResourceGroupDeployment -Name StorageDeployment -ResourceGroupName $Resour
 and then called it from a `PowerShell` task in Azure Pipelines with:
 
 ```yaml
+# azure-pipelines.yml snippet
 - task: AzurePowerShell@5
   displayName: Deploy Storage Infrastructure to $(BackupResourceGroup)
   inputs:
@@ -203,6 +209,8 @@ I thought I'd try with a Microsoft-Hosted Agent but this made me realize I'm get
 Bicep is not installed on the Hosted VMs. Not a big deal, so I wrote an installer:
 
 ```powershell
+# InstallBicep.ps1
+
 # initialise
 $source = "https://github.com/Azure/bicep/releases/latest/download/bicep-setup-win-x64.exe"
 $downloadPath =  (New-Object -ComObject Shell.Application).NameSpace('shell:Downloads').Self.Path # robust Downloads folder
@@ -222,11 +230,11 @@ if (-not $env:path.Contains($bicepPath)) { $env:path += ";$bicepPath" }
 bicep --version
 ```
 
-I wasn't happy with this though because there's lots of extra code to maintain, and there were issues between tasks where PowerShell could not find the bicep executable, despite me adding it to the PATH.
+I wasn't happy with this though because there's extraneous code to maintain, and there were issues between tasks where PowerShell could not find the bicep executable, despite me adding it to the PATH.
 
 #### Az module version
 
-The Az module version to support bicep must be 5.6 or later. However the [latest Windows Microsoft-Hosted agent VM](https://github.com/actions/virtual-environments/blob/main/images/win/Windows2019-Readme.md) only has 5.5. I did spend some time trying to coerce it into installing a later verison with `Install-Module`, `Update-Module`, `Install-Package` etc,  but I didn't get very far. I didn't get any errors with installing the module, but bicep threw an error:
+The Az module version to support bicep **must be v 5.6 or later**. However the [latest Windows Microsoft-Hosted agent VM](https://github.com/actions/virtual-environments/blob/main/images/win/Windows2019-Readme.md) only has 5.5. I did spend some time trying to coerce it into installing a later verison with `Install-Module`, `Update-Module`, `Install-Package` etc,  but I didn't get very far. I didn't get any errors with installing the module, but bicep threw an error:
 
 `##[error]Unexpected character encountered while parsing value: @. Path '', line 0, position 0.
 ##[error]PowerShell exited with code '1'.`
@@ -249,11 +257,11 @@ So, in Azure Pipelines I created a task like this:
     inlineScript: 'az deployment group create --resource-group $(BackupResourceGroup) --template-file azuredeploy.bicep --parameters azuredeploy.$(Environment).parameters.json'
 ```
 
-Lo and behold, it worked! Azure Cli will automatically download bicep if it's not found: perfect for a Microsoft-Hosted VM where bicep isn't supported yet!
+Lo and behold, it worked! Even better, Azure Cli will automatically download bicep if it's not found: perfect for a Microsoft-Hosted VM where bicep isn't supported yet!
 
 ## Conclusion as of April 2021
 
-I know this blog post will go out of date pretty quickly but at the time of writing I would say the best route for deploying Azure resources using bicep in a pipeline is to use the `AzureCLI` task and it works fine in both Windows and Ubuntu (I tested both with identical code).
+I know this blog post will go out of date pretty quickly but at the time of writing I would say the best route for deploying Azure resources using bicep in Azure Pipelines is to use the `AzureCLI` task and it works fine in both Windows and Ubuntu (I tested both with identical code).
 
 Bicep seems to make ARM templates much easier to read and maintain and is certainly much less pain. It is also easy to convert existing ARM templates *to a starting point*, and does quite a good job, however some hand tweaking after will be needed.
 
