@@ -240,7 +240,7 @@ The Az module version to support bicep **must be v 5.6 or later**. However the [
 
 I even put some debug code in to check and it all looked fine, but the deployment failed.
 
-# Use a Linux Microsoft-Hosted Agent
+## Use Azure CLI
 
 I then decided to have a go at using a Linux VM. The best way to use bicep in Linux was to use the [Azure Cli](https://docs.microsoft.com/en-us/cli/azure/), something I don't normally use, as a PowerShell user.
 
