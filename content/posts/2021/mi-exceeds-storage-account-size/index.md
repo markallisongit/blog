@@ -17,7 +17,7 @@ Another way to improve concurrency is to use Snapshot Isolation. As you know, th
 
 ## The problem
 
-When creating files for the filegroups in the monthly partition scheme, I got this error:
+When creating files for the filegroups in the monthly partition scheme, I get this error:
 
 ```
 Msg 5009, Level 16, State 1, Line 619
