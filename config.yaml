@@ -103,7 +103,7 @@ params:
   tips:
     enabled: true
     paymail: marquee@moneybutton.com
-    amount: 0.10
+    amount: 0.02
     currency: GBP    
 
 menu:
