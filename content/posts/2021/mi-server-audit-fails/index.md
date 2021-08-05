@@ -1,7 +1,7 @@
 ---
 title: "SQL Managed Instance Server Audit Fails"
-date: 2021-08-02T08:56:42+01:00
-lastmod: 2021-08-02T08:56:42+01:00
+date: 2021-08-05T08:56:42+01:00
+lastmod: 2021-08-05T19:56:42+01:00
 draft: false
 author: Mark
 tags: [azure, sql-managed-instance, audit, security]
