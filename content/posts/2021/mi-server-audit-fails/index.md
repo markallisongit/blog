@@ -1,5 +1,5 @@
 ---
-title: "SQLMI Server Audit Fails"
+title: "SQL Managed Instance Server Audit Fails"
 date: 2021-08-02T08:56:42+01:00
 lastmod: 2021-08-02T08:56:42+01:00
 draft: false
@@ -7,7 +7,7 @@ author: Mark
 tags: [azure, sql-managed-instance, audit, security]
 lightgallery: false
 ---
-I have set up server auditing for some managed instances in the same virtual cluster to record login success and failed events and writing them to blob storage.
+I have set up server auditing for some managed instances in the same virtual cluster to record login success and failed events and write them to blob storage.
 
 Downstream, an ADF pipeline reads the events asynchronously and inserts them into a database for further analysis and reporting.
 
@@ -20,7 +20,7 @@ The SQL Server ERRORLOG has entries like the following:
 ```log
 07/30/2021 21:18:46,spid89s,Unknown,HaDrDbMgr::WaitForQuorumCatchUp: {db_id: [6]<c/> db_name: [e982cea5-2bbf-437e-8b86-52b28afb28fe]<c/> quorum_mode: [1]}.
 ```
-A Google search for HaDrDbMgr::WaitForQuorumCatchUp yields zero (0) results!
+A Google search for `HaDrDbMgr::WaitForQuorumCatchUp` yields zero (0) results!
 
 I see the following also:
 
@@ -57,6 +57,8 @@ I see the following also:
 
 ```
 
-Simply disabling and enabling the audit allows it to start writing again. This behaviour should not be happening so will raise a support request with Microsoft and ask for a fix to be applied, or for a further explanation to see if there are any configuration changes that can be made.
+Simply disabling and enabling the audit allows it to start writing again. I have configured an alert with SentryOne to detect if audit events stop writing. 
 
-In the meantime an alert has been set up with Sentry One to detect if the audit has stopped writing to blob storage.
+## Microsoft Support confirms a bug
+
+Microsoft said that **this is a bug** with the Managed Instance and happens when there's a planned reconfiguration from their side, e.g. patching, updates, etc. There should be a fix sometime this year, but in the meantime just need to keep monitoring it.
