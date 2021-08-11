@@ -21,19 +21,19 @@ For solution 1 using Azure AD we must ensure that the Managed Instance is regist
 
 ![Active Directory Admin Fail](mi-needs-permissions-aad.png)
 
-An administrator of Active Directory needs to grant the Managed Instance access to read Azure AD by clicking on the Grant button shown here.
+An administrator of Active Directory needs to grant the Managed Instance access to read Azure AD by clicking on the Grant button shown here. If this is tried without the correct permission, you will get the error shown.
 
 ![Grant permissions](grant-permissions.png)
 
 Once this is done, an Active Directory user or group needs to be set as the AD admin. 
 
-The SQL Managed Instance will now be able to authenticate managed identities against Azure AD because it  now has permissions to read the directory.
+The SQL Managed Instance will now be able to authenticate managed identities against Azure AD because it  now has permission to read the directory.
 
 ### Create Managed Identity for the Virtual Machine
 
-I'm a big advocate of infrastructure-as-code for repeatable, reliable, predictable infrastructure that is easy to recover with less hassle so will show the ARM template first.
+I'm a big advocate of *infrastructure-as-code* for repeatable, reliable, predictable infrastructure that is easy to recover with less hassle so will show the ARM template first.
 
-Assuming that you have an ARM template to deploy your VMs... you haven't? Get to it right away!
+Assuming that you have an ARM template to deploy your VMs... you haven't? Get to it right away! Even better, if you want to live on the edge, have a [bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview) template.
 
 In the resources section of the ARM template for resource type `Microsoft.Compute/virtualMachines` add this section at the same level as the `"type`"
 
@@ -61,6 +61,8 @@ For completeness and I don't recommend you do it this way, here's how to do it i
 
 Go to `Virtual Machines -> Your VM -> Identity`. On the **System-Assigned** tab, switch status to On, then click **Save**. That's it!
 
+![the naughty way](2021-08-11_16-55-06.jpg)
+
 ## Set up
 ### Permit the VM access to the SQLMI
 
@@ -78,7 +80,7 @@ where **my-vm-name** is the name of the VM in Azure.
 
 #### Assign permissions to databases
 
-For example, let's say for a database called **Admin** the scripts on the VM need to have **db_owner** permissions in this database.
+For example, let's say for a database called **Admin**, the scripts on the VM need to have **db_owner** permissions in this database.
 
 ```sql
 USE [Admin]
@@ -92,7 +94,7 @@ Any script running on the VM will now have **db_owner** permission on the SQLMI.
 
 ## Using a Service Principal
 
-If you using an on-premises machine, it is also possible to grant access using Azure AD, however a Managed Identity is not possible, but the next best thing, a service principal can be used. The downside to this is, the secret for the Service Principal must be known by the script, so there must be a way to securely store this secret and not have it in plain text embedded in the script!
+If you using an on-premises machine, it is also possible to grant access using Azure AD, however a Managed Identity is not possible, but the next best thing, a service principal can be used. The downside to this is, the secret for the Service Principal must be known by the script, so there must be a way to securely store this secret and **not have it in plain text** embedded in the script!
 
 Steps required using a Service Principal with PowerShell. 
 
@@ -206,7 +208,9 @@ Invoke-Sqlcmd -ServerInstance "managedinstancename.public.2cf24dba5fb0.database.
 
 ## In summary
 
-* Set up Azure AD for your Managed Instances
+* Set up Azure AD for your Managed Instances so they can read the directory
 * Use Managed Identities to connect to SQLMI from Azure Resources
 * Use Service Principals for non-Azure resources (on premises, aws)
 * Stop using plaintext SQL Authentication!
+
+Happy scripting!
