@@ -4,7 +4,7 @@ date: 2021-08-11T15:42:06+01:00
 lastmod: 2021-08-11T15:42:06+01:00
 draft: false
 author: Mark
-tags: [azure, sql-managed-instance, managed-identity]
+tags: [azure, sql-managed-instance, managed-identity, powershell]
 lightgallery: false
 ---
 Consider the scenario where some PowerShell scripts need to be scheduled on an Azure virtual machine, which connects to an Azure SQL Managed Instance.
