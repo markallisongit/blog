@@ -11,7 +11,7 @@ Consider the scenario where some PowerShell scripts need to be scheduled on an A
 
 The PowerShell script needs to run on a schedule and must be able to connect to the managed instance securely. You would rather not have to manage passwords.
 
-What's the best way to do this? You guessed it, Managed Identity, or Managed Service Principal. This post will describe two ways of doing it, one using Azure AD and one using SQL Authentication and Azure Key Vault.
+What's the best way to do this? You guessed it, **Managed Identity**. This post will describe two ways of doing it, one using Azure AD with a Managed Identity and one using SQL Authentication and Azure Key Vault using a **Service Principal**.
 
 ## Pre-Requisites
 
@@ -31,11 +31,11 @@ The SQL Managed Instance will now be able to authenticate managed identities aga
 
 ### Create Managed Identity for the Virtual Machine
 
-I'm a big advocate of *infrastructure-as-code* for repeatable, reliable, predictable infrastructure that is easy to recover with less hassle so will show the ARM template first.
+I'm a big advocate of *infrastructure-as-code* for repeatable, reliable, predictable infrastructure that is easy to recover with less hassle so will show the ARM template method first.
 
 Assuming that you have an ARM template to deploy your VMs... you haven't? Get to it right away! Even better, if you want to live on the edge, have a [bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview) template.
 
-In the resources section of the ARM template for resource type `Microsoft.Compute/virtualMachines` add this section at the same level as the `"type`"
+In the resources section of the ARM template for resource type `Microsoft.Compute/virtualMachines` add this section at the same level as the `"type"`
 
 ```json
       "identity": {
@@ -57,9 +57,9 @@ for example
 
 This will create a System-Assigned Managed Identity for the virtual machine allowing the virtual machine to run scripts and authenticate against resources in Azure.
 
-For completeness and I don't recommend you do it this way, here's how to do it in the Azure Portal. Why are you using the portal?
+For completeness and I don't recommend you do it this way, here's how to do it in the Azure Portal. Why are you using the portal? How will you set everything up correctly in a disaster?
 
-Go to `Virtual Machines -> Your VM -> Identity`. On the **System-Assigned** tab, switch status to On, then click **Save**. That's it!
+Go to `Virtual Machines -> Your VM -> Identity`. On the **System-Assigned** tab, switch **Status** to **On**, then click **Save**. That's it!
 
 ![the naughty way](2021-08-11_16-55-06.jpg)
 
@@ -90,13 +90,13 @@ ALTER ROLE [db_owner] ADD MEMBER [my-vm-name]
 GO
 ```
 
-Any script running on the VM will now have **db_owner** permission on the SQLMI. I will show you how to use it in your PowerShell scripts in a second.
+Any script running on the VM using the **ManagedIdentity** security context, will now have **db_owner** permission on the SQLMI. I will show you how to use it in your PowerShell scripts in a second.
 
 ## Using a Service Principal
 
-If you using an on-premises machine, it is also possible to grant access using Azure AD, however a Managed Identity is not possible, but the next best thing, a service principal can be used. The downside to this is, the secret for the Service Principal must be known by the script, so there must be a way to securely store this secret and **not have it in plain text** embedded in the script!
+If you using an on-premises machine, or a VM in another public cloud such as AWS, it is also possible to grant access using Azure AD, however a Managed Identity is not possible, but the next best thing, a service principal can be used. The downside to this is, the secret for the Service Principal must be known by the script, so there must be a way to securely store this secret and **not have it in plain text** embedded in the script!
 
-Steps required using a Service Principal with PowerShell. 
+Steps required using a Service Principal with PowerShell:
 
 In a PowerShell window, connect to the Azure AD subscription where the Managed Instance resides with a user account that has Owner or Contributor permissions.
 
@@ -110,7 +110,7 @@ Now create a Service Principal with this command and change the Display Name for
 $servicePrincipal = New-AzADServicePrincipal -DisplayName "marktest-automation-sp"
 ```
 
-You may see a warning like this which tells you the Service Principal has Contributor permissions on the subscription
+You may see a warning like this which tells you the Service Principal has Contributor permissions on the subscription.
 
 {{< admonition warning "Warning" true >}}
 WARNING: Assigning role 'Contributor' over scope '/subscriptions/c73050d4-021f-428a-af6a-2af98db55a1e' to the new service principal.
@@ -163,7 +163,7 @@ The downside of using a Service Principal, as mentioned earlier, is the requirem
 Now that everything is configured, your script will need to authenticate with Azure from the VM.
 
 ```powershell
-Connect-AzAccount -ManagedService
+Connect-AzAccount -ManagedService -Subscription "{Your subscription name}"
 ```
 
 The Azure PowerShell session is now running under the context of the Managed Identity. A token from AAD is required to connect to the SQLMI which verifies that the connection is coming from the VM Managed Identity. 
@@ -195,8 +195,7 @@ $credential = New-Object System.Management.Automation.PSCredential ($username, $
 Once the information required to connect has been gathered, a secure connection to Azure is established with
 
 ```powershell
-Connect-AzAccount -ServicePrincipal -Credential $credential -Tenant 
-$tenantId -Subscription "{THE SUBSCRIPTION YOU WANT}"
+Connect-AzAccount -ServicePrincipal -Credential $credential -Tenant $tenantId -Subscription "{Your subscription name}"
 ```
 
 To connect to the SQLMI, a token is required, much like a Managed Identity, so connect with:
