@@ -36,4 +36,4 @@ My passion outside of messing around with shiny IT toys, is flying my paramotor.
 
 If you want to see more videos of my flying, have a peek at my [:(fab fa-youtube fa-fw): YouTube channel](https://www.youtube.com/user/keymoo/videos).
 
-I've also taken some hires photos of my flying in 2021 [here](https://markallison.smugmug.com/Other/Paramotoring/2021/2021-Photo-Book0).
+I've also taken some hires photos of my flying in 2021 [here](https://markallison.smugmug.com/Other/Paramotoring/2021/2021-Photo-Book).
