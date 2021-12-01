@@ -13,8 +13,6 @@ I spend most of my professional time now doing technical architecture and consul
 
 ### Azure Solutions Architect Expert
 
-I recently (March 2021) became a Microsoft certified Azure Solutions Architect Expert. 
-
 {{< style "img { height: 200px; }" >}}
 ![Azure Solutions Architect Expert Badge](azure-solutions-architect-expert-600x600.png)
 {{< /style >}}
@@ -37,3 +35,7 @@ My passion outside of messing around with shiny IT toys, is flying my paramotor.
 If you want to see more videos of my flying, have a peek at my [:(fab fa-youtube fa-fw): YouTube channel](https://www.youtube.com/user/keymoo/videos).
 
 I've also taken some hires photos of my flying in 2021 [here](https://markallison.smugmug.com/Other/Paramotoring/2021/2021-Photo-Book).
+
+![October 2021](https://photos.smugmug.com/Other/Paramotoring/2021/2021-Photo-Book/i-Vf8Tt2b/0/0e32ba18/4K/DSC01783-4K.jpg)
+
+*October 2021*
