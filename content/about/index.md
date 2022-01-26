@@ -28,14 +28,14 @@ From 2002-2005 I received the MVP award for SQL Server, but kids came along and 
 [Verify here](https://mvp.microsoft.com/en-us/PublicProfile/5703?fullName=Mark%20D%20Allison)
 ## Crazy stuff :grinning:
 
-My passion outside of messing around with shiny IT toys, is flying my paramotor. Here's a summary video of my flying from 2020.
+My passion outside of messing around with shiny IT toys, is flying my paramotor. These are my top ten flights of 2021.
 
-{{< youtube H0HS3_OJ4AM >}}
+{{< youtube UQ3syOeHENU >}}
 
-If you want to see more videos of my flying, have a peek at my [:(fab fa-youtube fa-fw): YouTube channel](https://www.youtube.com/user/keymoo/videos).
+If you want to see more videos of my flying, have a peek at my [:(fab fa-youtube fa-fw): YouTube channel](https://www.youtube.com/channel/UCIkSRiwfhiSA0wOQNB8ANBA).
 
 I've also taken some hires photos of my flying in 2021 [here](https://markallison.smugmug.com/Other/Paramotoring/2021/2021-Photo-Book).
 
 ![October 2021](https://photos.smugmug.com/Other/Paramotoring/2021/2021-Photo-Book/i-Vf8Tt2b/0/0e32ba18/4K/DSC01783-4K.jpg)
 
-*October 2021*
+*October 2021 (Right-click Open image in new tab)*
