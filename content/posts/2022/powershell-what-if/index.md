@@ -1,14 +1,14 @@
 ---
-title: "Powershell What-If"
+title: "What-If In Production"
 date: 2022-01-26T09:59:06Z
 lastmod: 2022-01-26T09:59:06Z
 draft: false
 author: Mark
-tags: [powershell]
+tags: [powershell, azure]
 lightgallery: false
 ---
 
-What if you could do a dry run of some PowerShell when making a change to your production environment?
+What if you could do a dry run of your PowerShell script when making a change to your production environment?
 
 If you've read my other posts, you will know I am a big advocate of *infrastructure-as-code*. Most of my work is done in the Microsoft Azure cloud, and although I encourage source controlling all assets within Azure, sometimes developers create things manually through the portal.
 
@@ -24,7 +24,36 @@ SQL DBAs will know that when making changes to production data, this can be safe
 
 ### Azure
 
-`-WhatIf` allows us to see what changes a script will make before running it "for real".
+`-WhatIf` allows us to see what changes a script will make before running it "for real". If using a function, then use `cmdletbinding` like this so that the `WhatIf` common parameter is passed in.
+
+```PowerShell
+function Do-Something {
+    [cmdletbinding(SupportsShouldProcess)]
+
+    param (
+        $param1,
+        $param2
+    )
+}
+```
+
+Don't forget that the automatic variable `$WhatIfPreference` can also be set, which will set -WhatIf on every command in this session.
+
+e.g.
+
+```PowerShell
+$WhatIfPreference = $true
+# all following commands will have the -WhatIf switch automatically applied
+
+Remove-AzStorageAccount -ResourceGroupName $ResourceGroup `
+    -Name "marktestsa1"
+```
+
+```text
+What if: Performing the operation "Remove Storage Account" on target "marktestsa1".
+```
+
+
 
 > "Why not use Bicep or ARM templates?" I hear you cry
 
