@@ -16,7 +16,7 @@ Yes, I know! 🙄
 
 ## Removing Azure Resources safely
 
-A scheduled drift report should alert developers or DevOps engineers that the production state is out-of-sync with the source controlled code. If this happens, and some resources need removing, then the `What-If` switch comes in handy and provides confidence to remove items in production that shouldn't be there.
+A scheduled drift report should alert developers or DevOps engineers that the production state is out-of-sync with the source controlled code. If this happens, and some resources need removing, then the `-WhatIf` switch comes in handy and provides confidence to remove items in production that shouldn't be there.
 
 ### SQL DBAs know
 
@@ -91,7 +91,7 @@ We now have four storage accounts, but want to remove the two named `marktestsa3
 
 ![Azure Portal](2022-01-26_10-22-36.png)
 
-To test our delete code we can simply add the `-WhatIf` switch, to ensure that we are deleting the correct accounts and there are no bugs in our logic.
+To test the code we can simply add the `-WhatIf` switch, to ensure that we are deleting the correct accounts and there are no bugs in our logic.
 
 ```PowerShell
 # remove the last two storage accounts, but do a "dry run" first
