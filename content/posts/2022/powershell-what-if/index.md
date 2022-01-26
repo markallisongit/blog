@@ -34,10 +34,15 @@ function Do-Something {
         $param1,
         $param2
     )
+
+    # main body of function
 }
+
+# called with
+Do-Something -param1 "value" -param2 "value" -WhatIf
 ```
 
-Don't forget that the automatic variable `$WhatIfPreference` can also be set, which will set -WhatIf on every command in this session.
+Don't forget that the automatic variable `$WhatIfPreference` can also be set, which will set `-WhatIf` on every command in this session.
 
 e.g.
 
@@ -47,6 +52,8 @@ $WhatIfPreference = $true
 
 Remove-AzStorageAccount -ResourceGroupName $ResourceGroup `
     -Name "marktestsa1"
+
+Do-Something -param1 "value" -param2 "value"    
 ```
 
 ```text
