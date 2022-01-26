@@ -20,15 +20,15 @@ A scheduled drift report should alert developers or DevOps engineers that the pr
 
 ### SQL DBAs know
 
-SQL DBAs will know that when making changes to production data, this can be safer if always using `BEGIN TRANSACTION` when making updates, or deletes to production data, checking it and then issuing `COMMIT`. Bearing in mind, of course, that the data is locked until the `COMMIT` is issued. If the data looks wrong, or a mistake was in the code, just press `CTRL-Z`, I mean `ROLLBACK TRAN`.
+SQL DBAs will know that when making changes to production data, this can be safer if always using `BEGIN TRANSACTION` when updating or deleting production data, checking it and then issuing `COMMIT` (bearing in mind, of course, that the data is locked until the `COMMIT` is issued). If the data looks wrong, or a mistake was in the code, just press `CTRL-Z`, I mean `ROLLBACK TRAN` and no data is lost.
 
 ### Azure
 
-`-WhatIf` allows us to see what changes a script will make before running it.
+`-WhatIf` allows us to see what changes a script will make before running it "for real".
 
 > "Why not use Bicep or ARM templates?" I hear you cry
 
-My preference is to use the Incremental deployment method so that resources are never deleted with declarative code, only changed or added. This gives another level of protection from removing resources that need to maintain state, e.g. databases, virtual machines, storage accounts.
+My preference is to use the [incremental deployment mode](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes#incremental-mode) so that resources are never deleted with declarative code, only changed or added. This gives another level of protection from removing resources that need to maintain state, e.g. databases, virtual machines, storage accounts.
 
 ## Practical example
 
