@@ -5,7 +5,7 @@ lastmod: 2022-01-26T09:59:06Z
 draft: false
 author: Mark
 tags: [powershell, azure]
-lightgallery: false
+lightgallery: true
 ---
 
 What if you could do a dry run of your PowerShell script when making a change to your production environment?
@@ -89,7 +89,7 @@ for ($i=1; $i -le 4; $i++) {
 
 We now have four storage accounts, but want to remove the two named `marktestsa3` and `marktestsa4` safely and without using the portal.
 
-![Azure Portal](2022-01-26_10-22-36.png)
+{{< image src="2022-01-26_10-22-36.png" caption="Azure Portal" >}}
 
 To test the code we can simply add the `-WhatIf` switch, to ensure that we are deleting the correct accounts and there are no bugs in our logic.
 
@@ -104,7 +104,7 @@ for ($i=3; $i -le 4; $i++) {
 
 You should see output similar to this:
 
-![WhatIf](2022-01-26_10-37-36.png)
+{{< image src="2022-01-26_10-37-36.png" caption="-Whatif" >}}
 
 That looks fine, so the `-WhatIf` switch can now be removed in the actual command.
 

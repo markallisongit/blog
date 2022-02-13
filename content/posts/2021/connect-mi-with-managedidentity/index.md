@@ -5,7 +5,7 @@ lastmod: 2021-08-11T15:42:06+01:00
 draft: false
 author: Mark
 tags: [azure, sql-managed-instance, managed-identity]
-lightgallery: false
+lightgallery: true
 ---
 Consider the scenario where some PowerShell scripts need to be scheduled on an Azure virtual machine, which connects to an Azure SQL Managed Instance.
 
@@ -19,11 +19,12 @@ What's the best way to do this? You guessed it, **Managed Identity**. This post 
 
 For solution 1 using Azure AD we must ensure that the Managed Instance is registered in Azure AD and has permissions to read Azure AD. [Read the docs here from Microsoft](https://docs.microsoft.com/en-gb/azure/azure-sql/database/authentication-aad-overview) but the upshot is in the Azure Portal you will see this in the Active Directory Admin section.
 
-![Active Directory Admin Fail](mi-needs-permissions-aad.png)
+{{< image src="mi-needs-permissions-aad.png" caption="Active Directory Admin Fail" >}}
 
 An administrator of Active Directory needs to grant the Managed Instance access to read Azure AD by clicking on the Grant button shown here. If this is tried without the correct permission, you will get the error shown.
 
-![Grant permissions](grant-permissions.png)
+{{< image src="grant-permissions.png" caption="Grant permissions" >}}
+
 
 Once this is done, an Active Directory user or group needs to be set as the AD admin. 
 
@@ -61,7 +62,7 @@ For completeness and I don't recommend you do it this way, here's how to do it i
 
 Go to `Virtual Machines -> Your VM -> Identity`. On the **System-Assigned** tab, switch **Status** to **On**, then click **Save**. That's it!
 
-![the naughty way](2021-08-11_16-55-06.jpg)
+{{< image src="2021-08-11_16-55-06.jpg" caption="the naughty way" >}}
 
 ## Set up
 ### Permit the VM access to the SQLMI

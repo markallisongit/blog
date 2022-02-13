@@ -1,6 +1,7 @@
 ---
 title: "About"
 author: "Mark"
+lightgallery: true
 ---
 
 ## A bit about me
@@ -36,6 +37,4 @@ If you want to see more videos of my flying, have a peek at my [:(fab fa-youtube
 
 I've also taken some hires photos of my flying in 2021 [here](https://markallison.smugmug.com/Other/Paramotoring/2021/2021-Photo-Book).
 
-![October 2021](https://photos.smugmug.com/Other/Paramotoring/2021/2021-Photo-Book/i-Vf8Tt2b/0/0e32ba18/4K/DSC01783-4K.jpg)
-
-*October 2021 (Right-click Open image in new tab)*
+{{< image src="https://photos.smugmug.com/Other/Paramotoring/2021/2021-Photo-Book/i-Vf8Tt2b/0/0e32ba18/4K/DSC01783-4K.jpg" caption="October 2021" >}}

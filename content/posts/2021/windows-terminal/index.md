@@ -22,23 +22,23 @@ It's also open source and you can contribute and view the [source code](https://
 
 Not much else to say really, I've been wanting tabs in my terminal like my Linux friends as long as I've been using tabs in Google Chrome.
 
-![Tabs](2021-10-13_13-10-34.jpg)
+{{< image src="2021-10-13_13-10-34.jpg" caption="Tabs" >}}
 
 ### Tabbed windows on steroids
 
 What my linux friends, **can't do** though, (as far as I'm aware) is have tabbed windows with different terminals in them:
 
-![Tabs on steroids](2021-10-13_13-13-03.jpg)
+{{< image src="2021-10-13_13-13-03.jpg" caption="Tabs on steroids" >}}
 
 Not only that, but each different terminal can have it's own colour profile plus other settings so I can make them look however I want. For example here's the ubuntu terminal running natively on Windows 10 in Windows Terminal:
 
-![Ubuntu](2021-10-13_13-16-36.jpg)
+{{< image src="2021-10-13_13-16-36.jpg" caption="Ubuntu" >}}
 
 ### Easy access to Settings
 
 It feels a bit like Visual Studio Code, where `CTRL-Shift-P` brings up the settings pane.
 
-![Settings](2021-10-13_13-19-27.jpg)
+{{< image src="2021-10-13_13-19-27.jpg" caption="Settings" >}}
 
 ### Split windows
 
@@ -46,9 +46,9 @@ Windows can be split as well both horizontally and vertically. How cool is that?
 
 If you can't remember the command to split the window, just `CTRL-Shift-P` and type `split`, and there you go! Beautiful.
 
-![Settings help](2021-10-13_13-20-58.jpg)
+{{< image src="2021-10-13_13-20-58.jpg" caption="Settings help" >}}
 
-![Split horizontal](2021-10-13_13-24-22.jpg)
+{{< image src="2021-10-13_13-24-22.jpg" caption="Split horizontal" >}}
 
 ## Get it now
 
@@ -58,4 +58,4 @@ Go and search for it on the Microsoft Store. It's lovely.
 Don't install it from the GitHub page because you won't receive automatic updates, the Microsoft Store version will keep it updated.
 {{< /admonition >}}
 
-![Get it](2021-10-13_13-25-27.jpg)
+{{< image src="2021-10-13_13-25-27.jpg" caption="Get it" >}}
