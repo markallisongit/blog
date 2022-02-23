@@ -21,7 +21,9 @@ As a last resort, I posted to Twitter.
 
 {{< tweet 1495784060509204481 >}}
 
-I got some great responses and will let you navigate to the tweet or click on the links below. Hope this helps someone who is equally curious.
+I got some great responses and will let you navigate to the tweet or click on the links below. Mostly importantly, the links below describe the following.
+
+> By itself, blocking_session_id -5 does not indicate a performance problem. -5 is an indication that the session is waiting on an asynchronous action to complete.
 
 ## References
 
