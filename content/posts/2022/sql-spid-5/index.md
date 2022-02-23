@@ -33,7 +33,4 @@ I got some great responses and will let you navigate to the tweet or click on th
 
 [sys.dm_exec_requests (Transact-SQL)](https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql)
 
-
-
 {{< tweet 1495888376528097280 >}}
-
