@@ -5,11 +5,11 @@ lastmod: 2022-02-23T10:39:18Z
 draft: false
 author: Mark
 tags: [sqlserver, sql-managed-instance]
-lightgallery: false
+lightgallery: true
 ---
 I had an interesting issue today when a colleague was running a long running IO intensive query. I ran `sp_who2` to view the activity and saw that the query was running multi-threaded, but was blocked by a SPID of -5.
 
-Yes, that's SPID minus five, or negative five. (putting this here to make google searches may be work?).
+Yes, that's SPID minus five, or negative five. (putting this here so that google searches maybe work?).
 
 {{< image src="2022-02-21_15-28-35.jpg" caption="blocking SPID -5" >}}
 
