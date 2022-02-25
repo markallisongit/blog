@@ -17,20 +17,20 @@ Why reinvent the wheel?
 
 In the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/templates/microsoft.sqlvirtualmachine/sqlvirtualmachines?tabs=bicep) I noticed there isn't a way to set the container name for automated backups of SQL Server with the `sqlvirtualmachines` resource. So, after deploying the template with ARM or bicep the default container name will be **backupcontainer**.
 
-What if I have multiple SQL IaaS VMs that I want backed up to the same storage account? Clearly, I need to set the container name, and I'm **not** doing this manually.
+What if I have multiple SQL IaaS VMs that I want backed up to the same storage account? Clearly, I need to set the container name, and I'm **not** doing this manually. A good name would be the SQL Server instance name.
 
 ## Tinkering
 
-I decided to go into the Azure Portal (yes, I know) and see if there is a setting in there to change the container name. I was surprised to see that it is possible by clicking on `Select storage account`.
+I decided to go into the [Azure Portal](https://portal.azure.com/#home) (yes, I know) and see if there is a setting in there to change the container name. I was surprised to see that it is possible by clicking on **Select storage account**.
 
 {{< image src="2022-02-25_12-51-22.jpg" caption="Select storage account in SqlIaaS resource" >}}
 
-I decided to change the name of the container to `markscontainer` and redeploy, and then capture the template deployment so that I could include that in my own infrastructure-as-code.
+I decided to change the name of the container to `markscontainer` and redeploy, and then capture the template deployment so that I could include that in my bicep template.
 
 
 {{< image src="2022-02-25_12-57-33.jpg" caption="Add container" >}}
 
-Capturing the deployment, and looking at the template I can see that the template includes a property called `StorageContainerName`.
+Capturing the deployment, and looking at the template I can see a property called `StorageContainerName`.
 
 {{< image src="2022-02-25_13-02-23.jpg" caption="Viewing the deployment template" >}}
 
@@ -50,7 +50,7 @@ I've reported this to the bicep team too.
 
 ## Summary
 
-If you want to add a specific name to the container where your SQL Server backups go to, add the `StorageContainerName` property to the `autoBackupSettings` of the bicep/ARM template as shown above.
+To set the name of the container where your SQL Server backups go to, add the `StorageContainerName` property to the `autoBackupSettings` of the bicep/ARM template as shown above.
 
 ## References
 
