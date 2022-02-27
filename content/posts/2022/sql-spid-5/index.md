@@ -4,7 +4,7 @@ date: 2022-02-23T10:39:18Z
 lastmod: 2022-02-23T10:39:18Z
 draft: false
 author: Mark
-tags: [sqlserver, sql-managed-instance]
+tags: [sql-server, sql-managed-instance]
 lightgallery: true
 ---
 I had an interesting issue today when a colleague was running a long running IO intensive query. I ran `sp_who2` to view the activity and saw that the query was running multi-threaded, but was blocked by a SPID of -5.
