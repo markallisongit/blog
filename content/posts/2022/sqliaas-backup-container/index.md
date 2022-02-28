@@ -50,7 +50,7 @@ I've reported this to the bicep team too.
 
 ## Summary
 
-To set the name of the container where your SQL Server backups go to, add the `StorageContainerName` property to the `autoBackupSettings` of the bicep/ARM template as shown above.
+To set the name of the container where your SQL Server backups go to, add the `storageContainerName` property to the `autoBackupSettings` of the bicep/ARM template as shown above.
 
 ## References
 
