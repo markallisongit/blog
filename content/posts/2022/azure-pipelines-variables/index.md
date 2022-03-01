@@ -325,3 +325,37 @@ var tags = {
 $settings = Get-Content config/settings.json -Raw | ConvertFrom-Json
 $vnet = $settings.$Environment.$Location.vNetName
 ```
+
+### Example Azure DevOps Library
+
+If you have some secrets that need to be deployed more than once, then it's best to put them in Azure DevOps libray and then add the secrets to a Key Vault deployment.
+
+It looks like this where we have a secret called `deployPassword`
+
+{{< image src="2022-03-01_14-24-28.jpg" caption="Storing initial key vault secrets" >}}
+
+The password can then be stored in an Azure Pipeline like so on Line 9:
+
+```yaml
+- task: AzurePowerShell@5
+  displayName: Deploy Key vaults and secrets
+  inputs:
+    azureSubscription: 'my subscription (248745da-341c-4485-9e69-ef2000b536f7)'
+    ScriptPath: secrets/Deploy.ps1
+    ScriptArguments: 
+      -Environment ${{ parameters.environment }} `
+      -Location ${{ parameters.location }} `
+      -deployPassword $(deployPassword)
+    azurePowerShellVersion: LatestVersion    
+    pwsh: true
+    workingDirectory: secrets
+```
+
+## Summary
+
+For my environment I prefer to use
+
+* **Azure DevOps Library** for initial secrets to be stored in a new key vault.
+* **JSON settings files** for variables that need to be used across multiple pipelines, regions or environments. This is so they can be source controlled.
+* **Parameter files** for pipelines that don't share attributes with any other pipeline. Also source controlled.
+* **Parameter defaults** for system functions, e.g. `utcNow()`, `deployment().location` and `resourceGroup().location`
