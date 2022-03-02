@@ -1,7 +1,6 @@
 ---
 title: "Where to store Azure Pipelines Variables?"
-date: 2022-03-04T09:30:29Z
-lastmod: 2022-03-04T09:30:29Z
+date: 2022-03-04T07:30:29Z
 draft: false
 author: Mark
 tags: [azure, devops, azure-pipelines]
