@@ -2,7 +2,7 @@
 publish = "public"
 command = "hugo --gc"
 
-[context.production]
+[context.production.environment]
 HUGO_VERSION = "0.93.0"
 HUGO_ENV = "production"
 
