@@ -19,7 +19,7 @@ I tried to use Google to get information on this but it seems that Google doesn'
 
 As a last resort, I posted to Twitter.
 
-{{< tweet 1495784060509204481 >}}
+{{< tweet user="dataguzzle" id="1495784060509204481" >}}
 
 I got some great responses and will let you navigate to the tweet or click on the links below. Mostly importantly, the links below describe the following.
 
@@ -33,4 +33,4 @@ I got some great responses and will let you navigate to the tweet or click on th
 
 [sys.dm_exec_requests (Transact-SQL)](https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql)
 
-{{< tweet 1495888376528097280 >}}
+{{< tweet user="dataguzzle" id="1495888376528097280" >}}
