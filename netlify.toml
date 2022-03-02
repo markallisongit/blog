@@ -7,14 +7,14 @@ HUGO_VERSION = "0.93.0"
 HUGO_ENV = "production"
 
 [context.branch-deploy]
-command = "hugo --buildFuture"
+command = "hugo --gc"
 
 [context.branch-deploy.environment]
 HUGO_VERSION = "0.93.0"
 HUGO_ENV = "development"
 
 [context.deploy-preview]
-command = "hugo --buildFuture"
+command = "hugo --gc"
 
 [context.deploy-preview.environment]
 HUGO_VERSION = "0.93.0"
