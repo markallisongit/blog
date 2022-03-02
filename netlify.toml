@@ -5,9 +5,6 @@ command = "hugo --gc"
 [context.branch-deploy]
 command = "hugo --gc --buildFuture"
 
-[context.deploy-preview]
-command = "hugo --gc --buildFuture"
-
 [context.production.environment]
 HUGO_VERSION = "0.92.2"
 HUGO_ENV = "production"
