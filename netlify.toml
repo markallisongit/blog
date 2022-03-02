@@ -8,8 +8,10 @@ HUGO_ENV = "production"
 
 [context.branch-deploy]
 HUGO_VERSION = "0.93.0"
+HUGO_ENV = "development"
 command = "hugo --buildFuture"
 
 [context.deploy-preview]
 HUGO_VERSION = "0.92.2"
+HUGO_ENV = "development"
 command = "hugo --buildFuture"
