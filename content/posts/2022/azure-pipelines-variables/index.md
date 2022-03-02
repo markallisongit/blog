@@ -358,3 +358,13 @@ For my environment I prefer to use
 * **JSON settings files** for variables that need to be used across multiple pipelines, regions or environments. This is so they can be source controlled.
 * **Parameter files** for pipelines that don't share attributes with any other pipeline. Also source controlled.
 * **Parameter defaults** for system functions, e.g. `utcNow()`, `deployment().location` and `resourceGroup().location`
+
+## References
+
+* [Parameter files](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/parameter-files)
+* [Template file defaults](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/parameters#default-value)
+* [Azure DevOps Library](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=yaml)
+* [Azure Pipelines variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch)
+* [Configuration file](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-functions-files#loadtextcontent)
+* [Runtime parameters](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/runtime-parameters?view=azure-devops&tabs=script)
+* [Bicep: Read files in JSON format](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-functions-files#loadtextcontent)
