@@ -6,11 +6,6 @@ author: Mark
 tags: [azure, devops, azure-pipelines]
 lightgallery: true
 ---
-
-## this should be shown
-
-on main branch
-
 ## Question
 
 Where should variables be stored for deploying *infrastructure-as-code* in Azure DevOps pipelines to Azure? Resources need to be deployed to different regions and environments, and attributes for these need to be stored somewhere.
