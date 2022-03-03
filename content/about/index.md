@@ -12,21 +12,12 @@ I spend most of my professional time now doing technical architecture and consul
 
 ## Certified
 
-### Azure Solutions Architect Expert
-
-{{< style "img { height: 200px; }" >}}
-![Azure Solutions Architect Expert Badge](azure-solutions-architect-expert-600x600.png)
-{{< /style >}}
-
-[Verify here](https://www.youracclaim.com/badges/513d9704-2878-4fd0-b0e7-f43a423af51c/linked_in)
-
-### SQL Server MVP award
+[![Click to Verify Azure Architect Expert](azure-solutions-architect-expert-300x300.png)](https://www.youracclaim.com/badges/513d9704-2878-4fd0-b0e7-f43a423af51c/linked_in)
 
 From 2002-2005 I received the MVP award for SQL Server, but kids came along and I didn't keep that up.
 
-![MVP Badge](mvp-banner-fb-300.jpg)
+[![Click to Verify MVP](mvp-banner-fb-300.jpg)](https://mvp.microsoft.com/en-us/PublicProfile/5703?fullName=Mark%20D%20Allison)
 
-[Verify here](https://mvp.microsoft.com/en-us/PublicProfile/5703?fullName=Mark%20D%20Allison)
 ## Crazy stuff :grinning:
 
 My passion outside of messing around with shiny IT toys, is flying my paramotor. These are my top ten flights of 2021.
