@@ -42,13 +42,13 @@ Rather than hard coding values in your template file, the values can be placed i
 }
 ```
 
-✔ Good for
+:(fas fa-plus-circle): Good for
 
 * Simple environments
 * Clean code
 * Store different sets of values for different environments or regions
 
-❌ Not so good for
+:(fas fa-minus-circle): Not so good for
 
 * Secrets, because parameter files are plain text
 * Values that repeat across different regions or environments. We should update in one place.
@@ -79,13 +79,13 @@ They look like this in ARM
 
 In this example I know that all SQL instances that I deploy will use the collation `Latin1_General_CI_AS`, so I shouldn't put this in all my parameter files because if I want to change it in the future I would have to update it in multiple places.
 
-✔ Good for
+:(fas fa-plus-circle): Good for
 
 * Reducing clutter in parameter files
 * Providing a default, but also allowing flexibility to override in parameter files
 * Providing expressions in defaults. e.g. `param location string = deployment().location`
 
-❌ Not so good for
+:(fas fa-minus-circle): Not so good for
 
 * Values that change between deployments
 * Values that need to be shared across pipelines
@@ -100,12 +100,12 @@ variables:
 - group: my-variable-group
 ```
 
-✔ Good for
+:(fas fa-plus-circle): Good for
 
 * Sharing values across multiple Azure Pipelines
 * A golden source for initial population of key vault secrets
 
-❌ Not so good for
+:(fas fa-minus-circle): Not so good for
 
 * Portability. What if you want to move to a different CI/CD tool?
 * Source controlling variables
@@ -138,12 +138,12 @@ steps:
     platform: $(platform)
 ```
 
-✔ Good for
+:(fas fa-plus-circle): Good for
 
 * Testing out some YAML code for your pipeline
 * Deploying executable code
 
-❌ Not good for
+:(fas fa-minus-circle): Not good for
 
 * Reusing variables across pipelines
 * Secrets
@@ -152,7 +152,7 @@ steps:
 
 Since bicep introduced the ability to [read files in JSON format](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-functions-files#loadtextcontent), it is possible to put variables in one place. e.g. `var mySettings = json(loadTextContent('settings.json'))`
 
-✔ Good for
+:(fas fa-plus-circle): Good for
 
 * Bicep templates
 * PowerShell scripts
@@ -161,7 +161,7 @@ Since bicep introduced the ability to [read files in JSON format](https://docs.m
 * Source controlling variables
 * Using the same code for interactive development/debugging and production code. Reading DevOps library interactively is a pain
 
-❌ Not good for
+:(fas fa-minus-circle): Not good for
 
 * Secrets
 * Requires extra code to read the config file
@@ -175,13 +175,13 @@ runtime parameters let you have more control over what values can be passed to a
 * Control parameter types, ranges allowed, and defaults
 * Dynamically select jobs and stages with template expressions
 
-✔ Good for
+:(fas fa-plus-circle): Good for
 
 * Choosing which environments to deploy to at runtime
 * Choosing a region to deploy to at runtime
 * Prompting for secrets (removes the CI/CD element though)
 
-❌ Not good for
+:(fas fa-minus-circle): Not good for
 
 * Variables across pipelines
 * Automation, although defaults can be set
@@ -331,7 +331,7 @@ If you have some secrets that need to be deployed more than once, then it's best
 
 It looks like this where we have a secret called `deployPassword`
 
-{{< image src="2022-03-01_14-24-28.jpg" caption="Storing initial key vault secrets" >}}
+{{< image src="2022-03-01_14-24-28.jpg" caption= "Storing initial key vault secrets" >}}
 
 The password can then be stored in an Azure Pipeline like so on Line 9:
 
