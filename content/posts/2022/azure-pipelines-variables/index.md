@@ -230,7 +230,7 @@ parameters:
 
 It looks like this in Azure DevOps:
 
-{{< image src="2022-03-01_08-06-08.jpg" caption="Specifying values at runtime" >}}
+{{< image src="2022-03-05_11-58-04.jpg" caption="Specifying values at runtime" >}}
 
 ### Example parameter files
 
