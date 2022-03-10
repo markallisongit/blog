@@ -47,15 +47,19 @@ Requires latest [bicep](https://docs.microsoft.com/en-us/azure/azure-resource-ma
 
 Takes 2 minutes to run.
 
-{{< image src="RedeployWithoutRebooting.gif" caption="Reploy (click to enlarge) Video length: 00:10" >}}
+{{< image src="RedeployWithoutRebooting.gif" caption="Redeploy without rebooting (click to enlarge) Video length: 00:10" >}}
 ### Redeploy after VM deallocated
 
-{{< image src="RedeployAfterDeallocate.gif" caption="Reploy (click to enlarge) Video length: 00:40" >}}
+{{< image src="RedeployAfterDeallocate.gif" caption="Redeploy after deallocation (click to enlarge) Video length: 00:40" >}}
 
 ## Strange workaround 1
 
 Restart the SQL Server service and redeploy
 
+{{< image src="RedeployRestartSql.gif" caption="Redeploy after Sql Service restart (click to enlarge) Video length: 00:47" >}}
+
 ## Strange workaround 2
 
-Change the VM Size to Standard_B2ms and redeploy
+Change the VM Size to Standard_D2ds_v4 and redeploy (same as rebooting?)
+
+{{< image src="RedeployResized.gif" caption="Redeploy after Sql Service restart (click to enlarge) Video length: 00:27" >}}
