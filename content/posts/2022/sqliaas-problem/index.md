@@ -2,7 +2,7 @@
 title: "Strange Sql Virtual Machine Problem"
 date: 2022-03-11T07:54:52Z
 lastmod: 2022-03-11T07:54:52Z
-draft: true
+draft: false
 author: Mark
 tags: [azure, sql-server, sql-virtual-machine, bicep]
 lightgallery: false
