@@ -33,13 +33,24 @@ In the SQL Server ERRORLOG on the VM:
 
 If you want to reproduce the issues I am having I created a repo [here](https://github.com/markallisongit/sqliaas-demo). Just clone the repo and change into the repo directory in PowerShell 7, Connect to the Azure subscription you want to deploy to and then run `Deploy.ps1`.
 
-<mark>TODO: Re-record short version including clone</mark>
+### Initial deploy works fine
 
-{{< image src="sqliaas-deploy.gif" caption="Deploying the project" >}}
+Takes 8 minutes to run.
+
+{{< image src="InitialDeploy.gif" caption="Initial deploy (click to enlarge) Video length: 00:10" >}}
 
 {{< admonition note "Note" true >}}
 Requires latest [bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/install) and [PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.2).
 {{< /admonition >}}
+
+### Redeploy without rebooting
+
+Takes 2 minutes to run.
+
+{{< image src="RedeployWithoutRebooting.gif" caption="Reploy (click to enlarge) Video length: 00:10" >}}
+### Redeploy after VM deallocated
+
+{{< image src="RedeployAfterDeallocate.gif" caption="Reploy (click to enlarge) Video length: 00:40" >}}
 
 ## Strange workaround 1
 
