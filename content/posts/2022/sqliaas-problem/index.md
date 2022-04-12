@@ -1,7 +1,7 @@
 ---
 title: "Sql Virtual Machine Race Condition"
-date: 2022-03-11T07:54:52Z
-lastmod: 2022-03-11T07:54:52Z
+date: 2022-04-12T07:54:52Z
+lastmod: 2022-04-12T07:54:52Z
 draft: false
 author: Mark
 tags: [azure, sql-server, sql-virtual-machine, bicep]
@@ -85,13 +85,36 @@ Change the VM Size to Standard_D2ds_v4 and redeploy (same as rebooting?)
 
 ## Microsoft Support
 
+### Suggestion 1: Delayed Start
+
 I raised a Support Request with Microsoft and the suggestion that came back was to set the SQL Server service to **Delayed Start**. This is because there is a program scheduled using the task scheduler to create the `D:\SQLTemp\Data` and `D:\SQLTemp\Log` directories on server boot. Looking in Task Scheduler, there is indeed a task called SqlStartUp which creates these tempdb directories. 
 
 {{< image src="2022-03-28_10-45-13.jpg" caption="SqlServerStarter.exe in SqlIaaS resource" >}}
 
 This is a [race condition](https://en.wikipedia.org/wiki/Race_condition), where if the SQL Server service wins the race with the SqlStartUp scheduled task, SQL Server will fail to start, because the tempdb directories do not exist.
 
-I view this solution as a workaround because it needs to be set in a Custom Script Extension after deployment which is a bit of hassle to create and maintain.
+I tried the **Delayed Start** suggestion but I get the same error and I suspect that it worked for Microsoft because the race condition just happened to fall on the correct side. However, when I run the deployment I get the same `SqlTimeOut` error.
+
+### Suggestion 2: Manual Start
+
+The next suggestion from Microsoft that seemed to work for them was to use Manual Start for the SQL Server and SQL Server Agent services. However when I tried it, I get the same `SqlTimeOut` error. Again, classic race condition.
+
+### Suggestion 3: Place TempDb on Premium attached storage
+
+Adding another premium disk to the machine and configuring TempDb file to reside on there "solves" the problem. However according to [Microsoft's best practises guide](https://docs.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices-checklist) for SQL Server on VMs, TempDb should be placed on the ephemeral local SSD drive (D:\ by default). 
+
+## Alternative home-grown solution
+
+One solution I am considering, but would rather not, because I am coding around Microsoft, is to set the SQL Server services to Manual start, and run a PowerShell script on startup which creates the TempDb directories, followed by a start of the SQL server services. This should eliminate the race condition.
+## Conclusion
+
+For now, I will configure the Sql Virtual Machines to use premium attached storage. In my environment it is not too important to have ultra-fast TempDb performance, but I know for some people that is a requirement. I have created a branch called **workaround** in the repo to show you have I've done that.  See https://github.com/markallisongit/sqliaas-demo/tree/workaround
+
+Microsoft have escalated the issue to the SQL Product Team, and I'm still waiting for that and will post an update when I hear back.
+
+
 ## References
 
 https://docs.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices-vm-size
+
+https://docs.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices-checklist
