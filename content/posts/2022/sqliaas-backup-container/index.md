@@ -5,7 +5,7 @@ lastmod: 2022-02-25T12:36:08Z
 draft: false
 author: Mark
 tags: [azure,sql-server,bicep,devops]
-lightgallery: true
+lightgallery: false
 ---
 Even though Microsoft offer Azure Sql Database and Azure Sql Managed Instance, there are occasions when SQL Server in a VM is required.
 
