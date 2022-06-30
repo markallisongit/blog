@@ -35,7 +35,16 @@ Microsoft later suggested to set both the SQL Agent and SQL Server services to D
 sc.exe config SQLSERVERAGENT start= delayed-auto; sc.exe config MSSQLSERVER start= delayed-auto;
 ```
 
-The full code can be found in my [git repo](https://github.com/markallisongit/sqliaas-demo). 
+The full code can be found in my [git repo](https://github.com/markallisongit/sqliaas-demo).
+
+Logging in to the VM shows that they are indeed set to Delayed Start.
+
+{{< image src="2022-06-30_13-38-31.jpg" caption="SQL Services set to Delayed Start (click to enlarge)" >}}
+
+I have tested this multiple times and it seems reliable (but let me know if you have issues).
+
+{{< image src="2022-06-30_14-29-05.jpg" caption="Reliable SQLVM deployments! (click to enlarge)" >}}
+
 
 ## Problem solved
 
