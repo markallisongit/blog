@@ -1,8 +1,8 @@
 ---
 title: "Sql Virtual Machine Race Conclusion"
-date: 2022-06-30T11:28:59+01:00
-lastmod: 2022-06-30T11:28:59+01:00
-draft: true
+date: 2022-06-30T16:28:59+01:00
+lastmod: 2022-06-30T16:28:59+01:00
+draft: false
 author: Mark
 tags: [azure,sql-server,sql-virtual-machine,bicep]
 lightgallery: true
