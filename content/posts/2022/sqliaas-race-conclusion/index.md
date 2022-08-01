@@ -1,7 +1,7 @@
 ---
 title: "Sql Virtual Machine Race Conclusion"
 date: 2022-06-30T16:28:59+01:00
-lastmod: 2022-07-20T11:10:59+01:00
+lastmod: 2022-08-01T12:20:59+01:00
 draft: false
 author: Mark
 tags: [azure,sql-server,sql-virtual-machine,bicep]
@@ -55,3 +55,7 @@ Hope this helps!
 ## UPDATE 20th July 2022
 
 Microsoft got in touch with me and let me know that this race condition has now been fixed by the product team so the code to set the SQL Server services to Delayed Start will no longer be required. At the time of this update the fix is being rolled out to all Azure regions according to their [safe deployment practises](https://azure.microsoft.com/en-us/blog/advancing-safe-deployment-practices/#:~:text=%20Advancing%20safe%20deployment%20practices%20%201%20Changing,the%20entire%20rollout%20process%20is%20completely...%20More%20). I will provide another update when the fix has been rolled out to all regions, from that point the workaround code I provided in this article can be removed.
+
+## UPDATE 1st August 2022
+
+This is now rolled out across all of Azure.
