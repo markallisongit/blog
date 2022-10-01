@@ -2,9 +2,9 @@
 title: "How  and Why to Set up IPv6 at Home"
 date: 2022-10-01T11:06:31+01:00
 lastmod: 2022-10-01T11:06:31+01:00
-draft: true
+draft: false
 author: Mark
-tags: []
+tags: [ipv6, networking]
 lightgallery: true
 ---
 
