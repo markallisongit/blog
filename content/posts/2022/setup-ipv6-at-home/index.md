@@ -38,7 +38,9 @@ To test out if it's working go to [https://test-ipv6.com/](https://test-ipv6.com
 
 {{< image src="2022-10-01_13-33-22.jpg" caption="IPv6 test results (click to enlarge)" >}}
 
-### 1. Uncomfortable truth
+Things I learned:
+
+### 1. Don't be uncomfortable with public IPs
 
 {{< admonition warning "All your devices are publicly addressable" true >}}
 When using IPv6, every IPv6-enabled device on your home network that connects to your router, depending on how it's configured, will get one (or more) internet-routable public IP addresses.{{< /admonition >}}
@@ -53,7 +55,7 @@ Firewall seems to be doing its job.
 
 The next thing I noticed is that it's totally normal to have many IPv6 addresses for every network interface on your machine. Most machines only have one interface, but some have more than that.
 
-My Windows Desktop has three IPv6 addresses which I will explain shortly.
+My Windows Desktop has three IPv6 addresses which I will explain shortly. If you run this in PowerShell:
 
  ``` powershell
  Get-NetIPAddress -InterfaceAlias 'Ethernet' -AddressFamily IPv6 | select IPAddress
@@ -130,6 +132,8 @@ Going to https://api64.ipify.org/ shows the current public address of my PC.
 
 {{< image src="2022-10-01_14-12-38.jpg" caption="My temporary public IP address" >}}
 
+It does feel weird seeing your PC's IP address showing up on external web sites.
+
 ### 4. DHCP is no longer required for most networks
 
 As part of Stateless Automatic Address Configuration (SLAAC) in IPv6, addresses are self-assigned and do not need to be handed out by a DHCP server. DHCPv6 can be used if really needed, but it's not required, and Android doesn't even support DHCP on IPv6. It's SLAAC only.
@@ -154,7 +158,15 @@ If you want a static IP for your device as you appear on the internet, the tempo
 Set-NetIPv6Protocol -UseTemporaryAddresses Disabled
 ```
 
-### 7. Merging company networks is easier
+### 7. Most home networks will be /64
+
+What does this mean? The IPv6 address is split up into eight groups separated by a colon. 
+
+`2a02:1243:5687:0:8d91:ba6b:b24d:9b41`
+
+The first three groups are given to you by your ISP `2a02:1243:5687`. The fourth group is the subnet, which you can divide up at home into LAN, WIFI, DMZ, or whatever, I'm just using `0` for my LAN. The last four groups is the interface or host ID on that subnet `8d91:ba6b:b24d:9b41`.
+
+### 8. Merging company networks is easier
 
 Let's say two companies merge together and they need to join their networks. In the past this was a nightmare because of the tiny range of IPv4 private address space. Most companies use the `10.x.x.x/8` range of addresses, which compared to IPv6 is a drop in the ocean.
 
