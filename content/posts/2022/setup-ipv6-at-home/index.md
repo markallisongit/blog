@@ -1,5 +1,5 @@
 ---
-title: "How  and Why to Set up IPv6 at Home"
+title: "I Set up IPv6 at Home"
 date: 2022-10-01T11:06:31+01:00
 lastmod: 2022-10-01T11:06:31+01:00
 draft: false
@@ -10,7 +10,7 @@ lightgallery: true
 
 ## IPv4 
 
-As you may already know [IANA](https://www.iana.org/) have exhausted the IPv4 address space.
+As you may already know [IANA](https://www.iana.org/), the global Internet Assigned Numbers Authority, have exhausted the IPv4 address space.
 
 Today, we are forced to use Network Address Translation (NAT) for home and mobile environments to translate the public IP address given to us by our ISP to internal private non-routable v4 addresses on our home devices. This works but is messy and problems will only increase as the number of devices in the world grows. We have already run out of IPv4 address space and some ISPs are implementing horrible solutions to get round it by using things like carrier grade NAT (CGN).
 
@@ -18,9 +18,13 @@ Today, we are forced to use Network Address Translation (NAT) for home and mobil
 
 Almost immediately after IPv4 was rolled out, people realized that the address space would not be enough, and began work on IPv6 with various RFCs in the late 90s. The new version of the internet protocol was [released on July 14th, 1999](https://www.iana.org/reports/1999/ipv6-announcement.html).
 
+IPv6 has been out for nearly 25 years now and is [gradually being adopted](https://www.google.com/intl/en/ipv6/statistics.html).
+
+{{< image src="2022-10-01_14-35-04.jpg" caption="Global IPv6 adoption. Source: [Google](https://www.google.com/intl/en/ipv6/statistics.html)" >}}
+
 ## What I learned about IPv6
 
-I live in the UK and my ISP is [Zen Internet](https://www.zen.co.uk) who will provide you a massive IPv6 address range if you [email them](mailto:ipv6@zen.co.uk). I asked them to set it up and then spent some time to understand how this protocol works. It really does make life a lot easier. The number of Public IPs I now have though just blows my mind.
+I live in the UK and my ISP is [Zen Internet](https://www.zen.co.uk) who will provide you a massive IPv6 /48 address range if you [email them](mailto:ipv6@zen.co.uk). I asked them to set it up and then spent some time to understand how this protocol works. It really does make life a lot easier. The number of Public IPs I now have though just blows my mind.
 
 **I now have 1,208,925,819,614,629,174,706,176 Public IP addresses.**
 
@@ -28,7 +32,7 @@ That's one septillion, two hundred and eight sextillion, nine hundred and twenty
 
 That's 65,536 subnets with four billion IPv4 entire internets in each subnet, all inside my network. Whooaaa!
 
-That's not even including the private non-routable Unique Local (ULA) address space which is `FD00::/8` or another local 1,329,227,995,784,915,872,903,807,060,280,344,576 addresses.
+That's not even including the private non-routable Unique Local (ULA) address space which is `FD00::/8` or another local 1,329,227,995,784,915,872,903,807,060,280,344,576 addresses which I can also use internally.
 
 We really shouldn't run out this time! I've heard it said that there are enough Public IP addresses for every atom on earth to have its own IP address with another 100 earths left over.
 
@@ -132,7 +136,7 @@ Going to https://api64.ipify.org/ shows the current public address of my PC.
 
 {{< image src="2022-10-01_14-12-38.jpg" caption="My temporary public IP address" >}}
 
-It does feel weird seeing your PC's IP address showing up on external web sites.
+It does feel weird seeing my PC's IP address showing up on external web sites.
 
 ### 4. DHCP is no longer required for most networks
 
@@ -186,8 +190,4 @@ If your ISP offers it at no cost, then go for it. Benefits:
 * Simple, more efficient routing
 * Built-in authentication and privacy support
 * True Quality of service (QoS) support
-* No more DHCP
-
-IPv6 has been out for nearly 25 years now and is [gradually being adopted](https://www.google.com/intl/en/ipv6/statistics.html).
-
-{{< image src="2022-10-01_14-35-04.jpg" caption="Global IPv6 adoption. Source: [Google](https://www.google.com/intl/en/ipv6/statistics.html)" >}}
+* No more DHCP or horrible 169.254.x.x addresses
