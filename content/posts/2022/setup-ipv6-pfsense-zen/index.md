@@ -7,7 +7,8 @@ author: Mark
 tags: [ipv6, networking]
 lightgallery: false
 ---
-I my previous post I talked about what I learnt about IPv6. In this post I want to show you how easy it is to set up IPv6 using pfSense as the router, and Zen Internet (UK) as the ISP.
+
+In my previous post I [talked about what I learnt about IPv6]({{< relref "./setup-ipv6-at-home/index.md" >}}). In this post I want to show you how easy it is to set up IPv6 using pfSense as the router, and Zen Internet (UK) as the ISP.
 
 ## Request IPv6 from Zen
 
