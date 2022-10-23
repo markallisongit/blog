@@ -1,7 +1,7 @@
 ---
 title: "How to Setup IPv6 with Pfsense"
-date: 2022-10-03T22:39:13+01:00
-lastmod: 2022-10-03T22:39:13+01:00
+date: 2022-10-23T09:27:13+01:00
+lastmod: 2022-10-23T09:27:13+01:00
 draft: false
 author: Mark
 tags: [ipv6, networking]
@@ -26,9 +26,17 @@ You will receive an email from them with information like this:
 
 */48 Delegation Prefix. This is usually provided over DHCPv6, and requires that your router acts as a requesting router for the purpose of IPv6 delegation RFC3633 -(https://tools.ietf.org/html/rfc3633). Subnets of this prefix are used by the CPE to address devices on the LAN.*
 
+## Make sure pfSense allows IPv6
+
+Go to **System->Advanced->Networking** and make sure **Allow IPv6** is checked.
+
+{{< image src="2022-10-03_22-57-21.jpg" caption="Allow IPv6 traffic" >}}
+
+On this same page make sure **Prefer IPv4 over IPv6** is *unchecked* if you want IPv6 to be used by default.
+
 ## Set up the WAN interface in pfSense
 
-Set the IPv6 Configuration Type to DHCP6, which tells your router to get its public IPv6 from Zen's DHCPv6 server.
+Go to **Interaces->WAN interface**, set the IPv6 Configuration Type to DHCP6, which tells your router to get its public IPv6 from Zen's DHCPv6 server.
 
 {{< image src="2022-10-03_22-47-49.jpg" caption="IPv6 Configuration Type" >}}
 
@@ -40,7 +48,7 @@ Make sure the DHCPv6 Prefix Delegation size matches what Zen sent you.
 
 ## Set up your LAN interface
 
-Go to Interfaces->LAN
+Go to **Interfaces->LAN**
 
 Set the **IPv6 Configuration Type** to Static IPv6. This will allow you to choose a subnet for the LAN. If you have multiple interfaces (e.g. for WIFI, DMZ, etc) you will need to do the same for these.
 
@@ -48,19 +56,15 @@ Set the **IPv6 Configuration Type** to Static IPv6. This will allow you to choos
 
 Enter a static IPv6 address for your LAN interface, this will be the **Delegation Prefix** given to you by Zen, followed by : and then you can choose a subnet value from `0000 - ffff` and a value for the interface itself. I chose `beef` for the subnet and `::1` for the interface. I blanked out the second and third portion of my delegation prefix for privacy reasons.
 
+Set the network prefix to /64.
+
 {{< image src="2022-10-03_23-13-32.jpg" caption="Choose a static IP for your" >}}
 
-## Make sure pfSense allows IPv6
-
-Go to System->Advanced->Networking and make sure **Allow IPv6** is checked.
-
-{{< image src="2022-10-03_22-57-21.jpg" caption="Allow IPv6 traffic" >}}
-
-On this same page make sure **Prefer IPv4 over IPv6** is *unchecked* if you want IPv6 to be used by default.
+Set the upstream gateway to **None**.
 
 ## Enable SLAAC
 
-Go to Services->DHCPv6 Server & RA and make sure **DHCPv6 Server** is unchecked, then select **Router Advertisements** tab.
+Go to **Services->DHCPv6 Server & RA** and make sure **DHCPv6 Server** is unchecked, then select **Router Advertisements** tab.
 
 Change the Router mode to **Unmanaged**. This will set the router to use SLAAC (auto-configuration) only without DHCPv6 (you do not need this at home).
 
@@ -72,7 +76,7 @@ On the same page ensure that **Provide DNS configuration via radvd** is checked.
 
 ## Reboot
 
-You will need to reboot your router at this point. When it comes back up check your WAN ip addresses and WAN gateways have IPv6 addresses. Your LAN interface should also have a static public IP now.
+You should reboot your router at this point, I didn't do this at first and found that the router did not respond to router solicitations. When it comes back up check your WAN IP addresses and WAN gateways have IPv6 addresses. Your LAN interface should also have a static public IP now.
 
 {{< image src="2022-10-03_23-24-31.jpg" caption="Provide DNS via radvd" >}}
 
@@ -80,7 +84,7 @@ Finally, reboot your computer so it will get a IPv6 address and then go to [http
 
 {{< image src="2022-10-03_23-31-56.jpg" caption="Check IPv6" >}}
 
-Go to Diagnostics->NDP Table to see if neighbors are being discovered using SLAAC. There should be a few entries in here now, but might not grow until other devices are rebooted.
+Go to **Diagnostics->NDP Table** to see if neighbors are being discovered using SLAAC. There should be a few entries in here now, but might not grow until other devices are rebooted.
 
 ## Firewall rules
 
