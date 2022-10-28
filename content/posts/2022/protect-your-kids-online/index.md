@@ -2,9 +2,9 @@
 title: "Protect Your Kids Online"
 date: 2022-10-28T20:46:34+01:00
 lastmod: 2022-10-28T20:46:34+01:00
-draft: true
+draft: false
 author: Mark
-tags: []
+tags: [networking, family, firewall, router]
 lightgallery: false
 ---
 As the "IT guy" I sometimes get asked how to protect kids online from malware and adult content. This article will show you how to easily implement a solution.
