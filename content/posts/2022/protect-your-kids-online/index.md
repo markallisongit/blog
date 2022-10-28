@@ -11,7 +11,7 @@ As the "IT guy" I sometimes get asked how to protect kids online from malware an
 
 I recently bought a new router so I could segment my home network and get prepared for FTTP internet, and I thought I'd share with you how I set it up to protect my family home. Maybe it will help you.
 
-I've been using [pfsense](https://www.pfsense.org/) for many years as an open source firewall/router and it's been absolutely great. Rock solid, highly recommended. However, I've decided to use a fork of the project called [OPNsense](https://opnsense.org/) on my new [router hardware](https://eu.protectli.com/vault-6-port/) and I've been very happy with it.
+I've been using [pfSense](https://www.pfsense.org/) for many years as an open source firewall/router and it's been absolutely great. Rock solid, highly recommended. However, I've decided to use a fork of the project called [OPNsense](https://opnsense.org/) on my new [router hardware](https://eu.protectli.com/vault-6-port/) and I've been very happy with it.
 
 ## How websites are loaded
 
@@ -29,17 +29,15 @@ Many [others](https://techcrunch.com/2021/07/22/a-dns-outage-just-took-down-a-go
 
 ## Using DNS to filter traffic
 
-There are many services that will use DNS to protect your home network, some free and some paid. I have for a long time used OpenDNS, but their service was taken over by Cisco Umbrella and which is paid. A couple of years ago [CloudFlare](https://www.cloudflare.com/) released the family version of their free, popular, ultra-fast `1.1.1.1` DNS service.
+There are many services that will use DNS to protect your home network, some free and some paid. I have for a long time used [OpenDNS](https://www.opendns.com/home-internet-security/), but their service was taken over by Cisco Umbrella and which is paid. A couple of years ago [CloudFlare](https://www.cloudflare.com/) released the family version of their free, popular, ultra-fast `1.1.1.1` DNS service, so this is what I use now.
 
 ## The easy solution
-
-To communicate online, a machine at home needs to be connected to the internet with its own IP address and it needs to know the IP address of at least one DNS server. 
 
 Most computers in the home obtain an  IP address from the DHCP server built into the ISP-supplied modem/router. I strongly recommend splitting this out into a separate device so you can have more control. See the links above.
 
 ### Steps
 
-In the DHCP server settings set the DNS servers to `1.1.1.3` and `1.0.0.3`. IPv6 versions are `2606:4700:4700::1113`, `2606:4700:4700::1003`. You are using IPv6 right? When your kids' devices connect to the router they will be assigned the safer DNS servers.
+In the DHCP server settings of your router set the DNS servers to `1.1.1.3` and `1.0.0.3`. IPv6 versions are `2606:4700:4700::1113`, `2606:4700:4700::1003`. You are using IPv6 right? ;) When your kids' devices connect to the router they will be assigned the safer DNS servers.
 
 That's it. 
 
@@ -62,7 +60,7 @@ This will use Google's servers which does not have any filtering.
 
 ## Use the firewall to enforce Cloudflare DNS
 
-What if you could block all DNS servers in the world except the family friendly CloudFlare DNS? That would solve it, right? I will show you how it's done in OPNsenese which is very similar to the popular pfSense.
+What if you could block all DNS servers in the world except the family friendly CloudFlare DNS? That would solve it, right? I will show you how it's done in OPNsense which is very similar to the popular pfSense.
 
 Firewall rules are usually evaluated top-down in order, and when a rule evaluates to true, it stops processing further rules.
 
@@ -95,7 +93,7 @@ Of course there are other methods that I used when mine were younger like:
 * Talking to them about not being able to unsee what you see on the internet
 * Putting any device that's internet connected in a common area (living room, kitchen, etc.)
 
-## TL;DR
+## TL; DR
 
 1. Get a decent router
 1. Configure the DHCP server to use `1.1.1.3` and `1.0.0.3` as DNS servers
