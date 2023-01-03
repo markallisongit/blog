@@ -24,12 +24,12 @@ From 2002-2005 I received the MVP award for SQL Server, but kids came along and 
 
 ## Crazy stuff :grinning:
 
-My passion outside of messing around with shiny IT toys, is flying my paramotor. These are my top ten flights of 2021.
+My passion outside of messing around with shiny IT toys, is flying my paramotor. These are my top ten flights of 2022.
 
-{{< youtube UQ3syOeHENU >}}
+{{< youtube iSfUyLQ3Evo >}}
 
 If you want to see more videos of my flying, have a peek at my [:(fab fa-youtube fa-fw): YouTube channel](https://www.youtube.com/channel/UCIkSRiwfhiSA0wOQNB8ANBA).
 
-I've also taken some hires photos of my flying in 2021 [here](https://markallison.smugmug.com/Other/Paramotoring/2021/2021-Photo-Book).
+I've also taken some hires photos of my flying in 2022 [here](https://markallison.smugmug.com/Other/Paramotoring/2022/2022-Photo-Book/).
 
-{{< image src="https://photos.smugmug.com/Other/Paramotoring/2021/2021-Photo-Book/i-Vf8Tt2b/0/0e32ba18/4K/DSC01783-4K.jpg" caption="October 2021" >}}
+{{< image src="https://photos.smugmug.com/Other/Paramotoring/2022/2022-Photo-Book/i-L4gnjX5/0/14dfd150/X5/DSC05149-X5.jpg" caption="December 2022" >}}
