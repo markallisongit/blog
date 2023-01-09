@@ -10,9 +10,9 @@ lightgallery: false
 
 A colleague had an issue this week with Azure Data Factory (ADF) in that a change to a trigger could not be published. "Ah, I know what this is", I thought. Those of you familiar with ADF will know that changes to published triggers cannot be made if the trigger is enabled.
 
-## Troublshooting Steps
+## Troubleshooting Steps
 
-I began troublshooting by first of all disabling the trigger. This also resulted in failure. I then proceeded to detach the trigger from the pipeline, copy out the JSON definition and then save and publish, but also got the same error.
+I began troubleshooting by first of all disabling the trigger. This also resulted in failure. I then proceeded to detach the trigger from the pipeline, copy out the JSON definition and then save and publish, but also got the same error.
 
 Next step was to try and dig down into the error and see if there were any inner exceptions that may give more information on the failure so in the Azure portal I looked at deployments for the resource group where the ADF is contained but just saw this error.
 
@@ -42,6 +42,16 @@ This was then followed by this message: `"Failed to unsubscribe to events for ev
 ## Storage account
 
 This got me thinking about the storage account. I looked at the storage account where the trigger was listening to and noticed that the account had a delete lock on it to prevent people accidentally deleting things in it. It turns out that deleting a trigger requires a deletion of a subscription to the events on the storage account. This was causing the issue.
+
+To see locks for your resource group, navigate to it in the Azure Portal and select Locks.
+
+{{< image src="2023-01-09_14-45-43.jpg" caption="Viewing locks" >}}
+
+Or use PowerShell
+
+```powershell
+Get-AzResourceLock -ResourceGroupName "<resource group name>"
+```
 
 ## Resolution
 
