@@ -2,7 +2,7 @@
 title: "Adf Failed To Deactivate Trigger"
 date: 2023-01-09T13:21:56Z
 lastmod: 2023-01-09T13:21:56Z
-draft: true
+draft: false
 author: Mark
 tags: [azure-data-factory]
 lightgallery: false
