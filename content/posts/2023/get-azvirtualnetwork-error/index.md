@@ -2,25 +2,30 @@
 title: "Troubleshooting Get-AzVirtualNetwork"
 date: 2023-01-16T12:15:23Z
 lastmod: 2023-01-16T12:15:23Z
-draft: true
+draft: false
 author: Mark
-tags: []
+tags: [azure, powershell, troublshooting ]
 lightgallery: false
 ---
-If you're working with Azure in PowerShell, you may have encountered the following error message when running the command Get-AzVirtualNetwork:
 
-```
-Get-AzVirtualNetwork: GenericArguments[0], 
+Are you working with Azure in PowerShell and encountering the following error message when running the command Get-AzVirtualNetwork?
+
+```Get-AzVirtualNetwork: GenericArguments[0], 
 'Microsoft.Azure.Management.Network.Models.SecurityRule', 
 on 'T MaxInteger[T](System.Collections.Generic.IEnumerable`1[T])' 
 violates the constraint of type 'T'.
-
 ```
 
-This occurred because I of an incompatibility between PowerShell 7.1.3 and the Az Module. Updating to the latest version of the Az module did not fix the issue.
+This error can be caused by an incompatibility between PowerShell 7.1.3 and the Az Module. Updating to the latest version of the Az module may not always fix the issue.
 
-I removed all versions of the Az Module by first listing where they all were with `Get-Module Az -ListAvailable` and then removing them with `Uninstall-Module Az -AllVersions`.
+One possible solution is to remove all versions of the Az Module by using the following command:
 
-After examining my module paths using `$env:PSModulePath -split ';'` I found all the paths to PowerShell modules and manually removed Az modules from those paths.
+```powershell
+Uninstall-Module Az -AllVersions
+```
 
-I then reinstalled the Az module again with `Install-Module Az -Scope AllUsers` and now it's working fine again. Hope it helps!
+Then, examine your module paths by using `$env:PSModulePath -split ';'`. This will show you all the paths to PowerShell modules. Manually remove any Az modules from those paths.
+
+Finally, reinstall the Az module again using PowerShell 7 as Administrator using the command `Install-Module Az -Scope AllUsers`. This should resolve the issue and get your Azure PowerShell scripts running smoothly again.
+
+Hope this helps!
