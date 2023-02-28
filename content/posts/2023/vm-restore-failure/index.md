@@ -1,7 +1,7 @@
 ---
 title: "The Importance of Testing Your Azure Backups"
-date: 2023-02-10T10:37:04Z
-lastmod: 2023-02-10T10:37:04Z
+date: 2023-02-28T10:37:04Z
+lastmod: 2023-02-28T13:02:04Z
 draft: false
 author: Mark
 tags: [azure, disaster-recovery, resilience]
