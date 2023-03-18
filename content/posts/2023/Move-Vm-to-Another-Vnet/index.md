@@ -1,8 +1,8 @@
 ---
 title: "How to Move a VM to Another Vnet"
-date: 2023-03-17T13:20:12Z
-lastmod: 2023-03-17T13:20:12Z
-draft: true
+date: 2023-03-20T13:20:12Z
+lastmod: 2023-03-20T13:20:12Z
+draft: false
 author: Mark
 tags: [azure, maintenance, networking, bicep]
 lightgallery: false
