@@ -1,7 +1,7 @@
 ---
-title: "How to Move a VM to Another Vnet"
-date: 2023-03-20T13:20:12Z
-lastmod: 2023-03-20T13:20:12Z
+title: "How to Move a VM to Another Vnet in Azure"
+date: 2023-03-19T09:20:12Z
+lastmod: 2023-03-19T09:20:12Z
 draft: false
 author: Mark
 tags: [azure, maintenance, networking, bicep]
@@ -30,7 +30,11 @@ Here are the steps that I took:
 1. **Create a new NIC** in the target vnet as part of a new VM configuration in PowerShell. 
 1. **Create a new VM** using the VM configuration created above
 
-I have provided some bicep code to demo the infrastructure and a PowerShell script to move the VM from one vnet to another so you can play around with it yourself. A better way to do this would be to redeploy the VM using bicep, but in this instance I used PowerShell.
+I have provided some bicep code to demo the infrastructure and a PowerShell script to move the VM from one vnet to another so you can play around with it yourself. Here are the resources that will be deployed as part of the demo.
+
+{{< image src="resources.jpg" caption="Azure resources deployed for demo" >}}
+
+ A better way to do this would be to redeploy the VM using bicep, but in this instance I used PowerShell to show what's happening step-by-step.
 
 ## Recovery Services Vault
 
