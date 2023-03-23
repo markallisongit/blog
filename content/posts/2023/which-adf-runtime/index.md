@@ -2,9 +2,9 @@
 title: "Which ADF Runtime for my workload?"
 date: 2023-03-23T08:26:42Z
 lastmod: 2023-03-23T08:26:42Z
-draft: true
+draft: false
 author: Mark
-tags: []
+tags: [azure, azure-data-factory, performance]
 lightgallery: true
 ---
 
