@@ -10,13 +10,13 @@ lightgallery: true
 
 ## Self Hosted or Managed Virtual Network for ADF?
 
-I was recently asked which runtime would be better to run ADF pipelines in Azure, use Private Managed Endpoints with the Managed Virtual Network, or provision a Self-Hosted Integration Runtime on a Virtual Machine.
+I was recently asked which runtime would be better to run ADF pipelines in Azure, use Private Managed Endpoints with the Managed Virtual Network, or provision a Self-Hosted Integration Runtime on a Virtual Machine?
 
 ### PaaS vs. IaaS
 
-{{< image src="cloud-models.png" caption="Cloud Models. [Image Source](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/monitoring-strategy)" >}}
-
 My default position on which technology to use is PaaS *where possible*. Organisations should focus on providing value to their business, not micro-managing infrastructure. PaaS reduces the operational burden of managing infrastructure in most cases.
+
+{{< image src="cloud-models.png" caption="Cloud Models. [Image Source](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/monitoring-strategy)" >}}
 
 This ease of operation comes at a cost of reduced flexibility, and sometimes performance.
 
@@ -46,6 +46,8 @@ When developing in ADF using the Managed Virtual Network, interactive authoring 
 
 {{< image src="interactive-authoring.jpg" caption="Enabling interactive authoring with Managed Virtual Network" >}}
 
+For each resource that ADF accesses, we need to approve the private IP address it is connecting from in the Managed Virtual Network:
+
 {{< image src="sqlmi-private-managed-endpoint.jpg" caption="Approve the SQLMI Private Managed Endpoint for ADF" >}}
 
 {{< image src="adls-private-endpoint.jpg" caption="Approve the ADLSg2 Private  Endpoint Connection for ADF" >}}
@@ -56,26 +58,19 @@ Once the approvals are done and the Integration Runtime has warmed up you should
 
 ### Self-hosted Integration Runtime (IaaS)
 
-After provisioning a VM, you will need to download and install the integration runtime inside the VM and connect it to your Azure Data Factory. Once this is done, the Integration Runtime will show as Running when your VM is started.
+After provisioning a VM, you will need to download and install the integration runtime inside the VM and connect it to your Azure Data Factory. Once this is done, the Integration Runtime will show as Running when your VM is started. I won't go through all that here as the Microsoft documentation is very good.
 
-To save costs, the VM could be scheduled to start with an Azure Function, and scheduled to stop with the built-in extension for Dev/Test VMs as shown in the bicep template.
+To save costs, the VM could be scheduled to start with an Azure Function, and scheduled to stop with the Microsoft.DevTestLab resource as shown in the supporting code bicep template.
 
 ## Performance
 
-I tested three loads using each Integration Runtime and here are the results.
+I tested three loads using each Integration Runtime and I tested with three different VM Sizes for the Self-Hosted runtime to try and find a sweet spot.
 
-{{< image src="adf-monitor-page.jpg" caption="ADF Results" >}}
+{{< image src="all-results.jpg" caption="ADF Results" >}}
 
-The Self-Hosted Integration runtime was 6% faster using a `Standard_B2s` VM Size. I sized the VM up to a `D32ads_v5` (32 vcores, 128 GB RAM) out of curiosity (without scaling the sources or sinks) with this result:
+> Microsoft: The recommended configuration for the Integration Runtime (Self-hosted) machine is 2 GHz, 4 Core CPU, 8 GB Memory and 80 GB disk. e.g. D4lds_v5
 
-{{< image src="self-hosted-32-cores.jpg" caption="ADF Results with 32 Cores" >}}
-
-> The recommended configuration for the Integration Runtime (Self-hosted) machine is 2 GHz, 4 Core CPU, 8 GB Memory and 80 GB disk. e.g. D4lds_v5
-
-It seems that the recommended configuration performs well enough with no extra gains using a larger VM for the Integration Runtime.
-
-{{< image src="all-results.jpg" caption="ADF Results with 32 Cores" >}}
-
+It seems that the recommended configuration performs well enough with no extra gains using a large VM to host the Integration Runtime.
 
 ## Conclusion
 
