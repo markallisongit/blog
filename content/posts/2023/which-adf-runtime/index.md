@@ -1,5 +1,5 @@
 ---
-title: "Which ADF Runtime for my workload?"
+title: "Which ADF Integration Runtime for my workload?"
 date: 2023-03-29T08:26:42Z
 lastmod: 2023-03-29T10:16:42Z
 draft: false
