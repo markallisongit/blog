@@ -10,7 +10,7 @@ lightgallery: true
 
 ## Self Hosted or Managed Virtual Network for ADF?
 
-I was recently asked which runtime would be better to run ADF pipelines in Azure, use Private Managed Endpoints with the Managed Virtual Network, or provision a Self-Hosted Integration Runtime on a Virtual Machine?
+I was recently asked which runtime would be better to run ADF pipelines in Azure; use Private Managed Endpoints with the Managed Virtual Network, or provision a Self-Hosted Integration Runtime on a Virtual Machine?
 
 ### PaaS vs. IaaS
 
@@ -22,7 +22,7 @@ This ease of operation comes at a cost of reduced flexibility, and sometimes per
 
 ## Test
 
-Let's do a semi-scientific test and move some data from Azure Data Lake Storage (ADLS) Gen2 to Azure SQL Managed Instance (SQLMI) using Azure Data Factory (ADF) with both private managed endpoints using the Managed Virtual Network Integration Runtime, and self hosted Integration Runtime in a VM that we provision and control.
+Let's do a semi-scientific test and move some data from Azure Data Lake Storage (ADLS) Gen2 to Azure SQL Managed Instance (SQLMI) using Azure Data Factory (ADF) with both private managed endpoints using the Managed Virtual Network Integration Runtime, and the Self-Hosted Integration Runtime in a VM that we provision and control.
 
 I am using the [UK Land Registry Price Paid full dataset](https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads) for this test which is a decent size, but not too big. ~5 GB of data in ~30 million rows.
 
@@ -35,6 +35,8 @@ Code for this test and demo has been provided including the entire infrastructur
 {{< image src="sketch.png" caption="Infrastructure provisioned by included code" >}}
 
 A bit messy but I talk through this in the video below
+
+{{< youtube E4HONOyrFlw >}}
 
 ### Managed Virtual Network (PaaS)
 
@@ -60,7 +62,7 @@ Once the approvals are done and the Integration Runtime has warmed up you should
 
 After provisioning a VM, you will need to download and install the integration runtime inside the VM and connect it to your Azure Data Factory. Once this is done, the Integration Runtime will show as Running when your VM is started. I won't go through all that here as the Microsoft documentation is very good.
 
-To save costs, the VM could be scheduled to start with an Azure Function, and scheduled to stop with the Microsoft.DevTestLab resource as shown in the supporting code bicep template.
+To save costs, the VM could be scheduled to start with an Azure Function, and scheduled to stop with the Microsoft.DevTestLab resource as shown in the [supporting code bicep template](https://github.com/markallisongit/Scripts/tree/main/adf-ir-sqlmi-demo).
 
 ## Performance
 
@@ -70,7 +72,7 @@ I tested three loads using each Integration Runtime and I tested with three diff
 
 > Microsoft: The recommended configuration for the Integration Runtime (Self-hosted) machine is 2 GHz, 4 Core CPU, 8 GB Memory and 80 GB disk. e.g. D4lds_v5
 
-It seems that the recommended configuration performs well enough with no extra gains using a large VM to host the Integration Runtime.
+It seems that the recommended configuration performs well enough with small gains using a large VM to host the Integration Runtime.
 
 ## Conclusion
 
@@ -99,3 +101,7 @@ Cons:
 
 * More expensive to run
 * More expensive to operate - staff need to patch and troubleshoot any issues with the VM
+
+## Recommendation
+
+Connectivity using the Managed Virtual Network is in Preview at the time of writing for Azure SQL Managed Instance. When this is Generally Available, I recommend the Managed Virtual Network as the most cost-effective and easier solution.
