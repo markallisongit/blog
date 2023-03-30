@@ -1,7 +1,7 @@
 ---
 title: "Trouble Connecting Adf to Github"
-date: 2023-03-30T18:08:01+01:00
-lastmod: 2023-03-30T18:08:01+01:00
+date: 2023-03-31T08:08:01+01:00
+lastmod: 2023-03-31T08:08:01+01:00
 draft: false
 author: Mark
 tags: [adf, git]
