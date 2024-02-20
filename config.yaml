@@ -83,7 +83,6 @@ params:
     GitHub: markallisongit
     Linkedin: markallison
     Email: home@markallison.co.uk
-    Twitter: dataguzzle
     RSS: true
   typeit:
     speed: 60
@@ -100,11 +99,6 @@ params:
     contentLength: 4000
     maxResultLength: 10
     snippetLength: 30
-  tips:
-    enabled: true
-    paymail: marquee@moneybutton.com
-    amount: 0.02
-    currency: GBP    
 
 menu:
   main:
