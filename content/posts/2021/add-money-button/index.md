@@ -2,7 +2,7 @@
 title: "How to Add Money Button to a Hugo Site"
 date: 2021-04-03T15:14:27+01:00
 lastmod: 2021-04-03T15:44:27+01:00
-draft: false
+draft: true
 author: Mark
 tags: [money-button, hugo, bitcoin]
 lightgallery: false

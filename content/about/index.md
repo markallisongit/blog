@@ -20,16 +20,16 @@ I spend most of my professional time now doing technical architecture and consul
 
 From 2002-2005 I received the MVP award for SQL Server, but kids came along and I didn't keep that up.
 
-[![Click to Verify MVP](mvp-banner-fb-300.jpg)](https://mvp.microsoft.com/en-us/PublicProfile/5703?fullName=Mark%20D%20Allison)
+![MVP](mvp-banner-fb-300.jpg)
 
 ## Crazy stuff :grinning:
 
-My passion outside of messing around with shiny IT toys, is flying my paramotor. These are my top ten flights of 2022.
+My passion outside of messing around with shiny IT toys, is flying my paramotor. Here's a short video showing why I love it so much. I think I have a problem!
 
-{{< youtube iSfUyLQ3Evo >}}
+{{< youtube QqtSPZ_QhqU >}}
 
 If you want to see more videos of my flying, have a peek at my [:(fab fa-youtube fa-fw): YouTube channel](https://www.youtube.com/@markallisonparamotor).
 
-I've also taken some hires photos of my flying in 2022 [here](https://markallison.smugmug.com/Other/Paramotoring/2022/2022-Photo-Book/).
+I've also taken some hires photos of my flying in 2023 [here](https://markallison.smugmug.com/Other/Paramotoring/2023/2023-Photo-Book/).
 
-{{< image src="https://photos.smugmug.com/Other/Paramotoring/2022/2022-Photo-Book/i-L4gnjX5/0/14dfd150/X5/DSC05149-X5.jpg" caption="December 2022" >}}
+{{< image src="https://photos.smugmug.com/Other/Paramotoring/2023/2023-Photo-Book/i-6zd2LZ6/0/FFxVpQ7CqCWbNhNRD3s484rt6zFPwQm2kPHGQ9tNW/X5/DSC01731-X5.jpg" caption="Snowdonia 2023" >}}
