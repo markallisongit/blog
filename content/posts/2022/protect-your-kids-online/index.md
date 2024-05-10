@@ -19,11 +19,11 @@ When you browse to a web site, the address of the site needs to be translated in
 
 If the IP address for a website cannot be found from its name, it cannot be loaded in the browser. Indeed many large scale internet outages are caused by problems with DNS. Recently, the pfsense website was down for hours due to problems with DNS.
 
-{{<tweet 1585611012627202048 >}}
+{{< tweet id="1585611012627202048" user="blah" >}}
 
 Discord was down earlier this year due to DNS.
 
-{{< tweet 1539146744671240192 >}}
+{{< tweet id="1539146744671240192" user="blah" >}}
 
 Many [others](https://techcrunch.com/2021/07/22/a-dns-outage-just-took-down-a-good-chunk-of-the-internet/) too.
 
