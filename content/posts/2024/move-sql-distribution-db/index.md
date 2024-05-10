@@ -2,9 +2,9 @@
 title: "How to Move Sql Distribution Database"
 date: 2024-05-02T11:04:28+01:00
 lastmod: 2024-05-02T11:04:28+01:00
-draft: true
+draft: false
 author: Mark
-tags: [sql-server, replication,performance-tuning]
+tags: [Sql-Server, Replication, Performance]
 lightgallery: true
 ---
 
