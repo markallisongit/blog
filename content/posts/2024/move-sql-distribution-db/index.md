@@ -12,7 +12,7 @@ lightgallery: true
 
 ## The incident
 
-Recently, a system I am working on experienced a noticeable slow response time for users due to high PAGEIOLATCH_SH waits. These waits are SQL Server waiting on a latch to read data from disk into memory. At the time we noticed that the distribution agent cleanup tasks was running for over an hour and checking the latency on the disks revealed that disk read time was peaking at 400ms, when it should be below 10ms.
+Recently, a system I am working on experienced a noticeable slow response time for users due to high PAGEIOLATCH_SH waits. These waits are SQL Server waiting on a latch to read data from disk into memory. At the time we noticed that the distribution agent cleanup task was running for over an hour and checking the latency on the disks revealed that disk read time was peaking at 400ms, when it should be below 10ms.
 
 ## Performance data
 
@@ -22,7 +22,7 @@ Here is the performance data
 
 {{< image src="latch-waits.jpg" caption="Latch waits" >}}
 
-{{< image src="disk-read-time.jpg" caption="Latch waits" >}}
+{{< image src="disk-read-time.jpg" caption="Disk Read Latency" >}}
 
 ## Diagnosis
 
@@ -75,7 +75,7 @@ We now have a fast disk for distribution which will speed up the cleanup jobs, a
 
 ## Results
 
-While we were reconfiguring the storage, the drive that holds the data files was also upgraded to io2 EBS volumes.
+While we were reconfiguring the storage, the drive that holds the data files was also upgraded to io2 EBS volumes, the fastest performing disks on off from aws.
 
 {{< image src="disk-read-time-after.jpg" caption="Disk read latency. Dark blue is current, light blue same period yesterday" >}}
 
