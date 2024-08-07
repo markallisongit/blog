@@ -1,5 +1,5 @@
 ---
-title: "Cpu Hot Add Breaks Fulltext"
+title: "Cpu Hot Add Breaks Fulltext Search"
 date: 2024-08-07T14:23:28+01:00
 lastmod: 2024-08-07T14:23:28+01:00
 draft: false
@@ -30,13 +30,14 @@ Almost immediately, users started searching the `Contacts` table using SQL Serve
 ```
 Msg 596, Level 21, State 1, Line 0
 Cannot continue the execution because the session is in the kill state.
+Msg 0, Level 20, State 0, Line 0
+A severe error occurred on the current command. The results, if any, should be discarded.
 ```
 and then the session was terminated.
 
 Examining the SQL Server ERRORLOG showed lots of stack dumps and access violations.
 
 ```
-05/30/24 15:11:55 spid 242 Exception 0xc0000005 EXCEPTION_ACCESS_VIOLATION reading address 0000000000000000 at 0x00007FFDE9F1ECF3
 08/05/24 19:07:00 spid 168 Exception 0xc0000005 EXCEPTION_ACCESS_VIOLATION reading address 0000000000000000 at 0x00007FFE305439F4
 08/05/24 19:07:30 spid 290 Exception 0xc0000005 EXCEPTION_ACCESS_VIOLATION reading address 0000000000000000 at 0x00007FFE305439F4
 08/05/24 19:07:36 spid 285 Exception 0xc0000005 EXCEPTION_ACCESS_VIOLATION reading address 0000000000000000 at 0x00007FFE305439F4
@@ -56,4 +57,4 @@ As with most things in IT, turning it off and on fixes most things. The server w
 
 {{< image src="cpu-cold-add.jpg" caption="After a reboot" >}}
 
-No more access violations, and happy users.
+No more access violations, and happier users.
