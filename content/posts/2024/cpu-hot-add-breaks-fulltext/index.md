@@ -1,7 +1,7 @@
 ---
-title: "Cpu Hot Add Breaks Fulltext Search"
+title: "CPU Hot Add Breaks Fulltext Search"
 date: 2024-08-07T14:23:28+01:00
-lastmod: 2024-08-07T14:23:28+01:00
+lastmod: 2024-08-07T15:52:28+01:00
 draft: false
 author: Mark
 tags: [Sql-Server, Full-Text]
