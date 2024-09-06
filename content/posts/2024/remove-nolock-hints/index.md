@@ -2,9 +2,9 @@
 title: "Script to Remove NOLOCK Hints"
 date: 2024-09-06T13:25:32+01:00
 lastmod: 2024-09-06T13:25:32+01:00
-draft: true
+draft: false
 author: Mark
-tags: []
+tags: [Sql-Server, Powershell]
 lightgallery: false
 ---
 
