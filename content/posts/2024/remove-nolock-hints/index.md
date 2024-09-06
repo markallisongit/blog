@@ -10,7 +10,7 @@ lightgallery: false
 
 # The problem
 
-Recently, I was performance tuning and enhancing the reliability of several databases for a client and discovered `NOLOCK` hints everywhere. Why are these bad, they seem to improve performance and remove blocking for most queries?
+Recently, I was performance tuning and enhancing the reliability of several SQL Server 2019 and 2022 databases for a client and discovered `NOLOCK` hints everywhere. Why are these bad, they seem to improve performance and remove blocking for most queries?
 
 ## 1. Dirty reads
 
@@ -27,6 +27,8 @@ Phantom reads happen when new rows are inserted or existing rows are deleted by 
 ## 4. Other nastiness
 
 In rare circumstances corrupted data could be read from partially modified rows that are being updated by another transaction resulting in logical inconsistencies. This can also occur on index pages, not just leaf pages.
+
+When reading data that is in the middle of having a page split, that can also result in some very weird issues. See https://sqlrambling.net/2015/05/29/getting-more-data-than-you-bargained-for-with-nolock/
 
 # The solution
 
