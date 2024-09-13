@@ -122,7 +122,7 @@ menu:
       name: About
       url: /about/
       title: ''
-      weight: 3
+      weight: 3  
 
 author:
   name: Mark Allison
@@ -138,6 +138,7 @@ markup:
 
 Permalinks:
   posts: 'blog/:filename'
+  ppgstats: '/ppgstats/:title/'
 
 sitemap:
   changefreq: weekly
