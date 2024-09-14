@@ -34,4 +34,4 @@ I've also taken some hires photos of my flying in 2023 [here](https://markalliso
 
 {{< image src="https://photos.smugmug.com/Other/Paramotoring/2023/2023-Photo-Book/i-6zd2LZ6/0/FFxVpQ7CqCWbNhNRD3s484rt6zFPwQm2kPHGQ9tNW/X5/DSC01731-X5.jpg" caption="Snowdonia 2023" >}}
 
-{{< iframe "https://ppgstats-axgvhfd4btfqfpeb.z02.azurefd.net/" >}}
+{{< ppgstats "https://ppgstats.markallison.co.uk" >}}
