@@ -84,13 +84,15 @@ I tried creating a new connection as suggested, but the error persisted.
 
 # Solution
 
-Firstly,the connection string in the Logic App **must** use the fully qualified domain name (FQDN) of the SQL Server. In my case, that meant including `.database.windows.net` in the server name.
+Firstly, the connection string in the Logic App **must** use the fully qualified domain name (FQDN) of the SQL Server. In my case, that meant including `.database.windows.net` in the server name.
 
 Additionally, the **System-Assigned Managed Identity** for the Azure SQL Database must be enabled when setting up the connection.
 
 Once I made these changes, the connection worked.
 
 {{< image src="connection-complete.jpg" caption="Successful connection" >}}
+
+{{< image src="successful-run.jpg" caption="Run succeeded" >}}
 
 ## An Interesting Observation
 
