@@ -9,7 +9,7 @@ lightgallery: false
 ---
 # The Problem
 
-Recently, I was working on a personal project where I needed to export data from my Azure SQL Database into a JSON file every hour. This JSON file would then be used by a static website hosted on Azure Blob Storage. I wanted a secure way to do this without maintaining passwords, so I decided to use Managed Identity to connect my Logic App to the Azure SQL Database.
+Recently, I was working on a [personal project](https://ppgstats.markallison.co.uk/) where I needed to export data from my Azure SQL Database into a JSON file roughly every hour. This JSON file would then be used by a static website hosted on Azure Blob Storage. I wanted a secure way to do this without maintaining passwords, so I decided to use Managed Identity to connect my Logic App to the Azure SQL Database.
 
 ## My Setup
 
@@ -23,7 +23,7 @@ Here’s how it looked in the Azure Portal:
 
 ## Following the Documentation
 
-The official documentation recommends enabling a System-Assigned Managed Identity for the Logic App and using that identity to access the database.
+The official documentation recommends enabling a **System-Assigned Managed Identity** for the **Logic App** and using that identity to access the database.
 
 After enabling Managed Identity, I got the Object ID for the Logic App:
 
@@ -32,10 +32,10 @@ After enabling Managed Identity, I got the Object ID for the Logic App:
 The next step was to add this Object ID to the Azure SQL Database with the following SQL command and grant permissions to the database:
 
 ```sql
-CREATE USER [la-sqltest] FROM EXTERNAL PROVIDER;
+CREATE USER [c9e84c4b-1bc7-4bb5-b9ed-a9dd18f9fcf3] FROM EXTERNAL PROVIDER;
 CREATE ROLE [la-sqltest-role];
 GRANT SELECT ON dbo.marktest TO [la-sqltest-role];
-ALTER ROLE [la-sqltest-role] ADD MEMBER [la-sqltest];
+ALTER ROLE [la-sqltest-role] ADD MEMBER [c9e84c4b-1bc7-4bb5-b9ed-a9dd18f9fcf3];
 ```
 
 However, when I tried this, I ran into an error:
@@ -51,6 +51,9 @@ To troubleshoot, I decided to use the Logic App's name instead of the Object ID:
 
 ```sql
 CREATE USER [la-sqltest] FROM EXTERNAL PROVIDER;
+CREATE ROLE [la-sqltest-role];
+GRANT SELECT ON dbo.marktest TO [la-sqltest-role];
+ALTER ROLE [la-sqltest-role] ADD MEMBER [la-sqltest];
 ```
 
 This worked without any issues!
@@ -60,8 +63,6 @@ Commands completed successfully.
 ```
 
 With the user created, I went ahead and attempted to connect the Logic App to the SQL Database.
-
-Next, let's connect the Logic App to Sql .
 
 ## Running into Another Error
 
@@ -81,9 +82,9 @@ I tried creating a new connection as suggested, but the error persisted.
 
 # Solution
 
-The connection string in the Logic App **must** use the fully qualified domain name (FQDN) of the SQL Server. In my case, that meant including `.database.windows.net` in the server name.
+Firstly,the connection string in the Logic App **must** use the fully qualified domain name (FQDN) of the SQL Server. In my case, that meant including `.database.windows.net` in the server name.
 
-Additionally, the **System-Assigned Managed Identity** for the Azure SQL Database must be enabled at least once during the initial connection setup.
+Additionally, the **System-Assigned Managed Identity** for the Azure SQL Database must be enabled when setting up the connection.
 
 Once I made these changes, the connection worked.
 
