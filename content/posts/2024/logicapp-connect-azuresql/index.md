@@ -9,7 +9,9 @@ lightgallery: false
 ---
 # The Problem
 
-Recently, I was working on a [personal project](https://ppgstats.markallison.co.uk/) where I needed to export data from my Azure SQL Database into a JSON file roughly every hour. This JSON file would then be used by a static website hosted on Azure Blob Storage. I wanted a secure way to do this without maintaining passwords, so I decided to use Managed Identity to connect my Logic App to the Azure SQL Database.
+Recently, I was working on a [personal project](https://ppgstats.markallison.co.uk/) where I needed to export data from my Azure SQL Database into a JSON file roughly every hour. This JSON file would then be used by a static website hosted on Azure Blob Storage. I wanted a secure way to do this without maintaining passwords, so I decided to use **Managed Identity** to connect my Logic App to the Azure SQL Database.
+
+{{< image src="logicapp-designer.jpg" caption="My simple Logic App" >}}
 
 ## My Setup
 
