@@ -9,6 +9,16 @@ lightgallery: false
 ---
 As we all know backing up to Azure Storage has been easy for some years now, but only since SQL Server 2022 have Microsoft supported backing up to S3. This includes third party providers that implement the S3 bucket protocol. 
 
+## Why do this?
+
+To keep backups safe and secure, best practise dictates that backup files should be off-site. Rather than backing up locally to a volume and then copying the file to S3, money can be saved by not having to provision space for local volumes. It is common in AWS to use an FSx volume for backups, or even a mounted EBS volume, but these costs can be removed by backing up directly to an S3 bucket.
+
+It is best to backup to a different region to the one your SQL Server is hosted in. If your S3-compatible storage provider supports distributed regions, then this option can be added to the BACKUP statement to specify which region.
+
+`WITH BACKUP_OPTIONS = '{"s3": {"region":"eu-west-1"}}'`
+
+In my case I don't need this because my S3 bucket is in a different region to my SQL Server already.
+
 ## Requirements
 To back up to URL an Access Key and Secret Key is required. If you do not have these, see your AWS administrator, they can be obtained from the AWS console.
 
