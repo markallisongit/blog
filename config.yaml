@@ -1,105 +1,116 @@
 baseURL: 'https://markallison.co.uk/'
-defaultContentLanguage: en
-languageCode: en
+theme: ["PaperMod"]
 title: Mark Allison
-enableEmoji: 'true'
+pagination.pagerSize: 10
+
 enableRobotsTXT: true
-theme: LoveIt
-enableGitInfo: false
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  minifyOutput: true
+  disableXML: true
 
 params:
-  version: 0.2.X
-  defaultTheme: auto
-  gitRepo: 'markallisongit'
-  dateFormat: 'Mon, 2 January 2006'
-  header:
-    desktopMode: fixed
-    mobileMode: auto
-    title:
-      name: Mark Allison
-      pre: <i class='fas fa-home fa-fw'>&nbsp;</i>
-      post: ''
-      typeit: false
-  footer:
-    enable: false
-    hugo: true
-    copyright: true
-    author: true
-    since: 2021
-  section:
-    paginate: 50
-    dateFormat: 2-Jan
-    rss: 10
-  list:
-    paginate: 6
-    dateFormat: 2-Jan
-    rss: 10
-  page:
-    hiddenFromHomePage: false
-    hiddenFromSearch: false
-    twemoji: false
-    lightgallery: false
-    ruby: true
-    fraction: true
-    fontawesome: true
-    linkToMarkdown: false
-    rssFullText: false
-    toc:
-      enable: true
-      keepStatic: false
-      auto: true
-    code:
-      copy: true
-      maxShownLines: 20
-    share:
-      enable: true
-      Twitter: true
-      LinkedIn: true
-      Whatsapp: true
-    comment:
-      enable: true
-      utterances:
-        enable: true
-        repo: markallisongit/blog
-        issueTerm: pathname
-        label: ''
-        lightTheme: github-light
-        darkTheme: github-dark
-  home:
-    rss: 10
-    profile:
-      enable: true
-      avatarURL: /images/markallison.jpg
-      title: Welcome
-      subtitle: 'A blog about Cloud Computing, Data and DevOps'
-      typeit: false
-      social: true
-      disclaimer: ''
-    posts:
-      enable: true
-      paginate: 10
-      defaultHiddenFromHomePage: false
-  social:
-    GitHub: markallisongit
-    Linkedin: markallison
-    Email: home@markallison.co.uk
-    RSS: true
-  typeit:
-    speed: 60
-    cursorSpeed: 1000
-    cursorChar: '|'
-    duration: 60
-  analytics:
-    enable: true
-    google:
-      id: G-PLWCT0MJK3
-  search:
-    enable: true
-    type: lunr
-    contentLength: 4000
-    maxResultLength: 10
-    snippetLength: 30
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Mark Allison
+  description: "A blog about Cloud Computing, Data and DevOps"
+  keywords: [Azure, SQL Server, Data, DevOps, Cloud Computing]
+  author: Mark Allison
+  # author: ["Me", "You"] # multiple authors
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: 'Mon, 2 January 2006'
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
 
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "<link / abs url>"
+    favicon16x16: "<link / abs url>"
+    favicon32x32: "<link / abs url>"
+    apple_touch_icon: "<link / abs url>"
+    safari_pinned_tab: "<link / abs url>"
+
+  label:
+    text: "Home"
+    icon: /apple-touch-icon.png
+    iconHeight: 35
+
+  # profile-mode
+  profileMode:
+    enabled: false # needs to be explicitly set
+    title: ExampleSite
+    subtitle: "This is subtitle"
+    imageUrl: "<img location>"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to my blog
+
+  socialIcons:
+    - name: x
+      url: "https://x.com/"
+    - name: stackoverflow
+      url: "https://stackoverflow.com"
+    - name: github
+      url: "https://github.com/"
+
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  editPost:
+    URL: "https://github.com/<path_to_repo>/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
     - identifier: posts
@@ -123,27 +134,13 @@ menu:
       url: /about/
       title: ''
       weight: 3  
-
-author:
-  name: Mark Allison
-  email: home@markallison.co.uk
-
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
 markup:
   highlight:
-    codeFences: true
-    guessSyntax: true
-    lineNos: true
-    lineNumbersInTable: true
     noClasses: false
-
-Permalinks:
-  posts: 'blog/:filename'
-  ppgstats: '/ppgstats/:title/'
-
-sitemap:
-  changefreq: weekly
-  filename: sitemap.xml
-  priority: 0.5
-
-outputs:
-  home: ["HTML", "RSS", "JSON"]
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
