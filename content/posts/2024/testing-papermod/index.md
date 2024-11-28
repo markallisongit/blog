@@ -1,7 +1,7 @@
 ---
 title: "Test Post"
 date: 2024-11-27T12:00:00Z
-draft: false
+draft: true
 ---
 
 This is a test for paper mod

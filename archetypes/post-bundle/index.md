@@ -5,5 +5,4 @@ lastmod: {{ .Date }}
 draft: true
 author: Mark
 tags: []
-lightgallery: false
 ---

@@ -8,12 +8,6 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-  emoji: true
-
 minify:
   minifyOutput: true
   disableXML: true
@@ -24,7 +18,6 @@ params:
   description: "A blog about Cloud Computing, Data and DevOps"
   keywords: [Azure, SQL Server, Data, DevOps, Cloud Computing]
   author: ["Mark Allison"]
-  # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: 'Mon, 2 January 2006'
   defaultTheme: auto # dark, light
@@ -40,7 +33,7 @@ params:
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
-  comments: false
+  comments: true
   hidemeta: false
   hideSummary: false
   showtoc: false
@@ -113,11 +106,13 @@ params:
     isCaseSensitive: false
     shouldSort: true
     location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
-    keys: ["title", "permalink", "summary", "content"]
+    distance: 100
+    threshold: 0.3
+    minMatchCharLength: 2
+    limit: 10
+    keys: ["title", "summary", "content"]
+
+
 menu:
   main:
     - identifier: posts
@@ -141,6 +136,13 @@ menu:
       url: /about/
       title: ''
       weight: 3  
+    - identifier: search
+      pre: <i class='fas fa-search fa-fw'></i>
+      post: ''
+      name: Search
+      url: /search/
+      title: 'Search the site'
+      weight: 4    
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
@@ -151,3 +153,9 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
