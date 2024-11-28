@@ -22,7 +22,7 @@ From 2002-2005 I received the MVP award for SQL Server, but kids came along and 
 
 ![MVP](mvp-banner-fb-300.jpg)
 
-## Crazy stuff :grinning:
+## Crazy stuff 😁
 
 My passion outside of messing around with shiny IT toys, is flying my paramotor. Here's a short video showing why I love it so much. I think I have a problem!
 

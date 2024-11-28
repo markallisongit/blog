@@ -8,6 +8,12 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  emoji: true
+
 minify:
   minifyOutput: true
   disableXML: true
@@ -17,7 +23,7 @@ params:
   title: Mark Allison
   description: "A blog about Cloud Computing, Data and DevOps"
   keywords: [Azure, SQL Server, Data, DevOps, Cloud Computing]
-  author: Mark Allison
+  author: ["Mark Allison"]
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: 'Mon, 2 January 2006'
@@ -25,11 +31,11 @@ params:
   disableThemeToggle: false
 
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
-  ShowWordCount: true
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
   disableSpecial1stPost: false
@@ -39,6 +45,8 @@ params:
   hideSummary: false
   showtoc: false
   tocopen: false
+
+  customCSS: ["css/custom.css"]
 
   assets:
     # disableHLJS: true # to disable highlight.js
@@ -71,16 +79,17 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Title: "Hi there 👋"
+    Content: 
+      Welcome to my tech blog, where I write about Cloud Computing, Data and DevOps.
 
   socialIcons:
-    - name: x
-      url: "https://x.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/markallison/"
+    - name: email
+      url: "blog@markallison.co.uk"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/markallisongit"      
 
   analytics:
     google:
@@ -91,14 +100,12 @@ params:
       SiteVerificationTag: "XYZabc"
 
   cover:
-    hidden: true # hide everywhere but not in structured data
+    hidden: false # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home
-    hiddenInSingle: true # hide on single page
+    hiddenInSingle: false # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+    enabled: false
 
   # for search
   # https://fusejs.io/api/options.html
