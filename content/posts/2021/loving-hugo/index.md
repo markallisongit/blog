@@ -23,6 +23,6 @@ but when deployed to netlify, the spaces between the icon and text were removed.
 
 Literally less than an hour after me posting this to the [Hugo support forum](https://discourse.gohugo.io/t/my-navbar-looks-different-after-deployment/31758), the main developer [bep](https://discourse.gohugo.io/u/bep/summary) replied and told me it was a bug. Shortly after, it was [scheduled to be fixed](https://github.com/gohugoio/hugo/issues/8332) in the very next release of Hugo! 
 
-Amazing :slightly_smiling_face: 
+Amazing 🙂
 
 Loving this platform!

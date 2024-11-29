@@ -80,9 +80,10 @@ Have a look at the [CreateContainer.ps1](https://github.com/markallisongit/mssql
 1. Lines 24-42. We wait for the container creation and SQL Server service to start. We poll it every second and attempt a login to SQL Server using the sa account.
 1. Line 45. At this point the container is running and we can log in with sa. We then write our configuration out to a file on the build server for other steps to use later on. This is a json file called ContainerInfo.json and has the port number and the container name stored in it.
 
-{{< admonition info "Note" true >}}
+{{< admonition "info" "Note" >}}
 A note on the sa password for containers. The docker image from Microsoft insists on strong sa passwords, so if you set something too weak in the config.json file your logins will fail. This is why in my example I have a complex looking one.
 {{< /admonition >}}
+
 
 ## Deploy
 

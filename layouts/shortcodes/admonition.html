@@ -1,0 +1,35 @@
+<div class="admonition admonition-{{ .Get "type" | default (.Get 0 | default "note") | lower }}">
+  <p class="admonition-title">
+    {{- $type := .Get "type" | default (.Get 0 | default "note") | lower -}}
+    {{- if .IsNamedParams }}
+      {{- with .Get "title" }}
+        {{ . }}
+      {{- else }}
+        {{- if eq $type "info" -}} Info
+        {{- else if eq $type "note" -}} Note
+        {{- else if eq $type "warning" -}} Warning
+        {{- else if eq $type "error" -}} Error
+        {{- else if eq $type "tip" -}} Tip
+        {{- else if eq $type "question" -}} Question
+        {{- else if eq $type "failure" -}} Failure
+        {{- else -}} Note <!-- Fallback -->
+        {{- end }}
+      {{- end }}
+    {{- else if gt (len .Params) 1 }}
+      {{ .Get 1 }} <!-- Custom title -->
+    {{- else }}
+      {{- if eq $type "info" -}} Info
+      {{- else if eq $type "note" -}} Note
+      {{- else if eq $type "warning" -}} Warning
+      {{- else if eq $type "error" -}} Error
+      {{- else if eq $type "tip" -}} Tip
+      {{- else if eq $type "question" -}} Question
+      {{- else if eq $type "failure" -}} Failure
+      {{- else -}} Note <!-- Fallback -->
+      {{- end }}
+    {{- end }}
+  </p>
+  <div class="admonition-content">
+    {{ .Inner }}
+  </div>
+</div>

@@ -1,0 +1,101 @@
+/* General Admonition Styles */
+.admonition {
+  border-left: 4px solid;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 5px;
+  background-color: #f9f9f9; /* Default light background */
+  color: #333333; /* Default text color */
+}
+
+.admonition-title {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+/* Info Admonition */
+.admonition-info {
+  border-color: #17a2b8; /* Light blue */
+  background-color: #e9f7fd; /* Pale blue */
+}
+
+/* Note Admonition */
+.admonition-note {
+  border-color: #007bff; /* Bright blue */
+  background-color: #e3f2fd; /* Pale blue */
+}
+
+/* Warning Admonition */
+.admonition-warning {
+  border-color: #ffc107; /* Bright yellow */
+  background-color: #fff8e1; /* Pale yellow */
+}
+
+/* Error Admonition */
+.admonition-error {
+  border-color: #dc3545; /* Bright red */
+  background-color: #f8d7da; /* Pale red */
+}
+
+/* Tip Admonition */
+.admonition-tip {
+  border-color: #28a745; /* Bright green */
+  background-color: #e8f5e9; /* Pale green */
+}
+
+/* Question Admonition */
+.admonition-question {
+  border-color: #6610f2; /* Bright purple */
+  background-color: #f3e8fd; /* Pale purple */
+}
+
+/* Failure Admonition */
+.admonition-failure {
+  border-color: #6c757d; /* Dark gray */
+  background-color: #f1f3f5; /* Pale gray */
+}
+
+/* Dark Mode Overrides */
+body.dark .admonition {
+  background-color: #2c2c2c; /* Dark mode default background */
+  color: #eeeeee; /* Dark mode text color */
+}
+
+body.dark .admonition-info {
+  border-color: #0dcaf0;
+  background-color: #073642; /* Dark pale blue */
+}
+
+body.dark .admonition-note {
+  border-color: #66b3ff;
+  background-color: #001f3f; /* Dark pale blue */
+}
+
+body.dark .admonition-warning {
+  border-color: #ffcc00;
+  background-color: #3e2c00; /* Dark pale yellow */
+}
+
+body.dark .admonition-error {
+  border-color: #ff6b6b;
+  background-color: #4d0000; /* Dark pale red */
+}
+
+body.dark .admonition-tip {
+  border-color: #38d39f;
+  background-color: #003b29; /* Dark pale green */
+}
+
+body.dark .admonition-question {
+  border-color: #a084ca;
+  background-color: #2a003f; /* Dark pale purple */
+}
+
+body.dark .admonition-failure {
+  border-color: #6c757d;
+  background-color: #2c2c2c; /* Dark pale gray */
+}
+
+#menu li span i {
+  margin-right: 8px; /* Adjust the value as needed */
+}
