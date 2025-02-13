@@ -16,7 +16,7 @@ I spend most of my professional time now doing technical architecture and consul
 
 ## Certified
 
-[![Click to Verify Azure Architect Expert](azure-solutions-architect-expert-300x300.png)](https://www.youracclaim.com/badges/513d9704-2878-4fd0-b0e7-f43a423af51c/linked_in)
+[![Click to Verify Azure Architect Expert](azure-solutions-architect-expert-300x300.png)](https://learn.microsoft.com/en-gb/users/markallison/credentials/5eef295753b909e1)
 
 From 2002-2005 I received the MVP award for SQL Server, but kids came along and I didn't keep that up.
 
