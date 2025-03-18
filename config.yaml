@@ -3,6 +3,9 @@ theme: ["PaperMod"]
 title: Mark Allison
 pagination.pagerSize: 10
 
+permalinks:
+  posts: /blog/:filename/
+
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
